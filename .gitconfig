@@ -1,0 +1,48 @@
+[user]
+	name = Mirosław Pragłowski
+	email = m@praglowski.com
+[core]
+	excludesfile = /Users/mpraglowski/.gitignore_global
+	quotepath = false
+	precomposeunicode = true
+	autocrlf = input
+	safecrlf = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[credential]
+	helper = osxkeychain
+[pull]
+	rebase = true
+[alias]
+	heroku = push heroku master
+ 	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+[rerere]
+	enabled = true
+[push]
+	default = simple
+[color]
+	ui = true
+[mergetool "p4mergetool"]
+	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $PWD/$BASE $PWD/$REMOTE $PWD/$LOCAL
+	trustExitCode = false
+[mergetool]
+	keepBackup = false
+[difftool "p4mergetool"]
+	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $LOCAL $REMOTE
+[diff]
+	tool = p4mergetool
+[merge]
+	tool = p4mergetool
+[difftool "diffmerge"]
+	cmd = /usr/bin/diffmerge \"$LOCAL\" \"$REMOTE\"
+[mergetool "diffmerge"]
+	trustExitCode = true
+	cmd = /usr/bin/diffmerge --merge --result=\"$MERGED\"\"$LOCAL\" \"$BASE\" \"$REMOTE\"
