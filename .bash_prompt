@@ -1,7 +1,8 @@
 # GIT prompt
 GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWCOLORHINTS="yes"
-source $HOME/.git-prompt.sh
+source $HOME/.git_prompt
+
 #working export PS1='[\u \W$(__git_ps1 " (%s)")]\$ '
 #default: export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
