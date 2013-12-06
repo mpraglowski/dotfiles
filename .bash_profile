@@ -46,6 +46,4 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 # If possible, add tab completion for many git commands
 [ -f ~/.git_completion ] && source ~/.git_completion
 
-source ~/.bashrc
-
 
