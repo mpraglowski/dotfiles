@@ -1,0 +1,8 @@
+{
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"tabSize": "2",
+	"translateTabsToSpaces": "true"
+}
