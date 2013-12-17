@@ -10,4 +10,5 @@ PATH=$PATH:$HOME/.rvm/bin
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # Go tools
-export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
