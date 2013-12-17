@@ -1,8 +1,8 @@
 {
 	"ignored_packages":
 	[
-		"Vintage"
 	],
+	"vintage_start_in_command_mode": true,
 	"tabSize": "2",
 	"translateTabsToSpaces": "true"
 }
