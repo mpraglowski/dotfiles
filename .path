@@ -12,3 +12,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # Go tools
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+
+# Haskell
+export PATH="$HOME/Library/Haskell/bin:$PATH"
