@@ -2,8 +2,11 @@
 cd "$(dirname "${BASH_SOURCE}")"
 git pull origin master
 function doIt() {
-	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
-		--exclude "README.md" --exclude "LICENSE" -av --no-perms . ~
+	rsync --exclude ".git/" --exlude ".gitignore" --exclude ".DS_Store" --exclude "bootstrap.sh" \
+		--exclude "README.md" --exclude "LICENSE" --exclude "links.sh" \
+		--exclude ".vim" --exclude "sublime" --exclude "cabal" \
+		-av --no-perms . ~
+	sh links.sh
 	source ~/.bash_profile
 }
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
@@ -12,7 +15,7 @@ else
 	read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
 	echo
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
-		doIt
+		doIt		
 	fi
 fi
 unset doIt
