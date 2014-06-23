@@ -15,3 +15,6 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # Haskell
 export PATH="$HOME/Library/Haskell/bin:$PATH"
+
+# Ruby
+export PATH="/usr/local/rvm/gems/ruby-2.1.2/bin:$PATH"
