@@ -19,6 +19,7 @@ alias j="jobs"
 alias glg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias gs='git status'
 alias gl='git log --oneline --decorate'
+alias gdf='git diff'
 alias pull='git pull'
 alias commit='git commit'
 alias push='git push'
