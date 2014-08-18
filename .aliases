@@ -21,7 +21,7 @@ alias gs='git status'
 alias gl='git log --oneline --decorate'
 alias gdf='git diff'
 alias pull='git pull'
-alias commit='git commit'
+alias commit='git commit -v'
 alias push='git push'
 
 # Detect which `ls` flavor is in use
