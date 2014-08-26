@@ -28,29 +28,20 @@
 	reb = "!r() { git rebase -i HEAD~$1; }; r"
 	# push to heroku
 	heroku = push heroku master
-[apply]
-	# Detect whitespace errors when applying a patch
-	whitespace = fix
-	ignorewhitespace = change
 [core]
 	# Use custom `.gitignore` and `.gitattributes`
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore_global
 	attributesfile = ~/.gitattributes
+	autocrlf = input
 	# Treat spaces before tabs, lines that are indented with 8 or more spaces, and
 	# all kinds of trailing whitespace as an error.
 	# [default] trailing-space: looks for spaces at the end of a line
 	# [default] space-before-tab: looks for spaces before tabs at the beginning of
 	# a line
-	whitespace = space-before-tab,tab-in-indent,cr-at-eol,tabwidth=4
 	# Make `git rebase` safer on OS X
 	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
-	trustctime = false
-	quotepath = false
-	precomposeunicode = true
-	autocrlf = false
-	safecrlf = false
 [credential]
-	helper = osxkeychain
+	helper = /opt/boxen/bin/boxen-git-credential
 # URL shorthands
 [url "git@github.com:"]
 	insteadOf = "gh:"
@@ -87,29 +78,30 @@
 	added = yellow
 	changed = green
 	untracked = cyan
-[merge]
-	# Include summaries of merged commits in newly created merge commit messages
-	log = true
-# Diff & merge tools
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[mergetool "p4mergetool"]
-	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $PWD/$BASE $PWD/$REMOTE $PWD/$LOCAL
-	trustExitCode = false
-[mergetool]
-	keepBackup = false
-[difftool "p4mergetool"]
-	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $LOCAL $REMOTE
+
 [diff]
 	tool = p4mergetool
 [merge]
-	tool = p4mergetool
+	tool = vimdiff3
+[mergetool]
+	keepBackup = false
+	prompt = false
+
 [difftool "diffmerge"]
 	cmd = /usr/bin/diffmerge \"$LOCAL\" \"$REMOTE\"
 [mergetool "diffmerge"]
 	trustExitCode = true
 	cmd = /usr/bin/diffmerge --merge --result=\"$MERGED\"\"$LOCAL\" \"$BASE\" \"$REMOTE\"
+[mergetool "gvimdiff3"]
+	cmd = gvim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+[mergetool "vimdiff3"]
+	cmd = vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+[difftool "p4mergetool"]
+	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $LOCAL $REMOTE
+
+[hub]
+protocol = https
+[gist]
+	private = true
+[github]
+	user = mpraglowski
