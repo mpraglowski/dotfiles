@@ -82,11 +82,14 @@
 [diff]
 	tool = p4mergetool
 [merge]
-	tool = vimdiff3
+  tool = splice
 [mergetool]
 	keepBackup = false
 	prompt = false
 
+[mergetool "splice"]
+  cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
+  trustExitCode = true
 [difftool "diffmerge"]
 	cmd = /usr/bin/diffmerge \"$LOCAL\" \"$REMOTE\"
 [mergetool "diffmerge"]
