@@ -172,4 +172,4 @@ alias railson="rails server -p "
 alias konacha="bundle exec rake RAILS_ENV=test konacha:serve"
 
 # Count lines of code in current folder recursively
-alias loc='find ./ -not -type d | xargs wc -l | cut -c 1-8 | awk \'{total += (} END {print total}\')'
+alias loc="find ./ -not -type d | xargs wc -l | cut -c 1-8 | awk \'{total += (} END {print total}\')"
