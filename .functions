@@ -317,6 +317,7 @@ function til() {
   current=${PWD} && \
   cd ~/til/ && \
   git pull --rebase && \
+  mkdir -p "${1}" && \
   $EDITOR ${1}/${2}.md && \
   git add ${1}/${2}.md && \
   git commit && \
