@@ -20,9 +20,12 @@ alias glg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset 
 alias gs='git status'
 alias gl='git log --oneline --decorate'
 alias gdf='git diff'
+alias gfd='git diff'
 alias pull='git pull'
 alias commit='git commit -v'
 alias push='git push'
+alias ci='git commit -v'
+alias glb='git branches | grep -v remote'
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
