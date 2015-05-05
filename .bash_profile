@@ -48,3 +48,7 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 # If possible, add tab completion for many git commands
 [ -f ~/.git_completion ] && source ~/.git_completion
 
+# node.js - custom node modules folder
+export NPM_PACKAGES="${HOME}/.npm"
+export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+export PATH="$NPM_PACKAGES/bin:$PATH"
