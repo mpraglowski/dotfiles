@@ -401,5 +401,22 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
+" Vim ColorToogle
+function! SetupCursorLine(...)
+  highlight CursorLine ctermbg=NONE cterm=NONE gui=NONE
+  highlight LineNr ctermfg=darkgrey
+  set cursorline
+endfunction
+
+call SetupCursorLine()
+
+function! ToggleBackground(...)
+  :call ToggleBg()
+  :call SetupCursorLine()
+endfunction
+
+let g:default_background_type = "dark"
+map <Leader>. :call ToggleBackground()<CR>
+
 " Activate snipmate
-ActivateAddons vim-snippets snipmate
+"ActivateAddons vim-snippets snipmate
