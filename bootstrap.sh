@@ -17,6 +17,7 @@ function doIt() {
   ln -sFf ~/dotfiles/.path ~/.path
   ln -sFf ~/dotfiles/.screenrc ~/.screenrc
   ln -sFf ~/dotfiles/.tmux.conf ~/.tmux.conf
+  ln -sFf ~/dotfiles/.vimrc ~/.vimrc
   ln -sFf ~/dotfiles/sublime/User/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
   source ~/.bash_profile
 }
