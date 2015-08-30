@@ -1,2 +1,4 @@
 [ -n "$PS1" ] && source ~/.bash_profile
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+# If not running interactively, do not do anything
+[[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux
