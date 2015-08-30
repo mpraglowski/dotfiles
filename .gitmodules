@@ -109,9 +109,6 @@
 [submodule "vim/bundle/vim-zenroom2"]
 	path = vim/bundle/vim-zenroom2
 	url = git@github.com:amix/vim-zenroom2.git
-[submodule "vim/bundle/solarized"]
-	path = vim/bundle/solarized
-	url = git@github.com:altercation/vim-colors-solarized.git
 [submodule "vim/bundle/syntastic-react"]
 	path = vim/bundle/syntastic-react
 	url = git@github.com:jaxbot/syntastic-react.git
@@ -133,3 +130,9 @@
 [submodule "vim/bundle/tslime.vim"]
 	path = vim/bundle/tslime.vim
 	url = git@github.com:jgdavey/tslime.vim.git
+[submodule "vim/bundle/vim-colors-solarized"]
+	path = vim/bundle/vim-colors-solarized
+	url = git@github.com:altercation/vim-colors-solarized.git
+[submodule "vim/bundle/tmux.vim"]
+	path = vim/bundle/tmux.vim
+	url = git@github.com:zaiste/tmux.vim.git
