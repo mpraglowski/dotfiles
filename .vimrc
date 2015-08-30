@@ -77,6 +77,11 @@ set guioptions-=L
 " Don't wrap lines
 set nowrap
 
+" Line numbers
+set number                      " line numbers
+set nocompatible                " choose no compatibility with legacy vi
+set nowrap                      " don't wrap lines
+
 " => trailing whitespaces (show & remove on save)
 set list
 set listchars=tab:▸\ ,trail:·
