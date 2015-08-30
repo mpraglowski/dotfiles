@@ -136,3 +136,6 @@
 [submodule "vim/bundle/tmux.vim"]
 	path = vim/bundle/tmux.vim
 	url = git@github.com:zaiste/tmux.vim.git
+[submodule "vim/bundle/vim-colortoggle"]
+	path = vim/bundle/vim-colortoggle
+	url = git@github.com:saghul/vim-colortoggle.git
