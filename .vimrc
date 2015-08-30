@@ -78,9 +78,10 @@ set guioptions-=L
 set nowrap
 
 " Line numbers
-set number                      " line numbers
-set nocompatible                " choose no compatibility with legacy vi
-set nowrap                      " don't wrap lines
+set number
+
+" Choose no compatibility with legacy vi
+set nocompatible
 
 " => trailing whitespaces (show & remove on save)
 set list
@@ -89,6 +90,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
+set term=xterm-256color
 set t_Co=256
 let g:solarized_termcolors=256
 let g:colors_name="solarized"
@@ -403,8 +405,8 @@ map <Leader>a :call RunAllSpecs()<CR>
 
 " Vim ColorToogle
 function! SetupCursorLine(...)
-  highlight CursorLine ctermbg=NONE cterm=NONE gui=NONE
-  highlight LineNr ctermfg=darkgrey
+"  highlight CursorLine ctermbg=NONE cterm=NONE gui=NONE
+"  highlight LineNr ctermfg=darkgrey
   set cursorline
 endfunction
 
