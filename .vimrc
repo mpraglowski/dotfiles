@@ -69,12 +69,6 @@ set novisualbell
 set t_vb=
 set tm=500
 
-" Disable scrollbars (real hackers don't use scrollbars for navigation!)
-set guioptions-=r
-set guioptions-=R
-set guioptions-=l
-set guioptions-=L
-
 " Don't wrap lines
 set nowrap
 
@@ -222,13 +216,6 @@ if has("mac") || has("macunix")
   vmap <D-k> <M-k>
 endif
 
-" Delete trailing white space on save, useful for Python and CoffeeScript ;)
-func! DeleteTrailingWS()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal `z"
-endfunc
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Turn persistent undo on
 "    means that you can undo even when you close a buffer/VIM
@@ -293,7 +280,6 @@ endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => File type specific settings
-autocmd BufWrite *.coffee :call DeleteTrailingWS()
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 au FileType ruby,eruby setl ofu=rubycomplete#Complete
 au FileType html,xhtml setl ofu=htmlcomplete#CompleteTags
