@@ -107,7 +107,7 @@ set background=dark
 set encoding=utf8
 
 " Use Unix as the standard file type
-set ffs=mac,unix,dos
+set ffs=unix,mac,dos
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
