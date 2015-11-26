@@ -75,6 +75,9 @@ set nowrap
 " Show line numbers
 set number
 
+" Highlight current line
+set cursorline
+
 " Choose no compatibility with legacy vi
 set nocompatible
 
@@ -87,7 +90,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 " => Colors and Fonts
 set term=xterm-256color
 set t_Co=256
-let g:solarized_termcolors=256
 let g:colors_name="solarized"
 
 " Enable syntax highlighting
@@ -390,18 +392,11 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
-" Vim ColorToogle
-function! SetupCursorLine(...)
-"  highlight CursorLine ctermbg=NONE cterm=NONE gui=NONE
-"  highlight LineNr ctermfg=darkgrey
-  set cursorline
-endfunction
-
-call SetupCursorLine()
+" Vim ColorToggle
 
 function! ToggleBackground(...)
-  :call ToggleBg()
-  :call SetupCursorLine()
+  let &background = ( &background == "dark"? "light" : "dark" )
+  set cursorline
 endfunction
 
 let g:default_background_type = "dark"
