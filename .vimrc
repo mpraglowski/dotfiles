@@ -59,6 +59,7 @@ set magic
 
 " Show matching brackets when text indicator is over them
 set showmatch
+
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
@@ -77,13 +78,13 @@ set guioptions-=L
 " Don't wrap lines
 set nowrap
 
-" Line numbers
+" Show line numbers
 set number
 
 " Choose no compatibility with legacy vi
 set nocompatible
 
-" => trailing whitespaces (show & remove on save)
+" Trailing whitespaces (show & remove on save)
 set list
 set listchars=tab:▸\ ,trail:·
 autocmd BufWritePre * :%s/\s\+$//e
