@@ -2,6 +2,74 @@ set runtimepath+=~/.vim
 set rtp+=~/.vim/bundle/vim-colors-solarized
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugins
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Vundle plugins
+" Keep Plugin commands between vundle#begin/end.
+Plugin 'gorkunov/smartgf.vim'
+Plugin 'rking/ag.vim'
+Plugin 'sjl/splice.vim'
+Plugin 'OrangeT/vim-csharp'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'skammer/vim-css-color'
+Plugin 'chriseppstein/vim-haml'
+Plugin 'pangloss/vim-javascript'
+Plugin 'elzr/vim-json'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rake'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'ecomba/vim-ruby-refactoring'
+Plugin 'tonchis/vim-to-github'
+Plugin 'vim-scripts/ZoomWin'
+Plugin 'benmills/vimux'
+Plugin 'endel/vim-github-colorscheme'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'vim-scripts/mru.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tomtom/tlib_vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'scrooloose/snipmate-snippets'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-airline'
+Plugin 'vim-scripts/mayansmoke'
+Plugin 'tpope/vim-markdown'
+Plugin 'junegunn/goyo.vim'
+Plugin 'amix/vim-zenroom2'
+Plugin 'jaxbot/syntastic-react'
+Plugin 'LnL7/vim-nix'
+Plugin 'mxw/vim-jsx'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'jimenezrick/vimerl'
+Plugin 'vim-erlang/vim-erlang-compiler'
+Plugin 'jgdavey/tslime.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'zaiste/tmux.vim'
+Plugin 'saghul/vim-colortoggle'
+Plugin 'airblade/vim-gitgutter'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 " Sets how many lines of history VIM has to remember
 set history=700
@@ -299,12 +367,6 @@ autocmd BufNewFile,BufRead *.haml setf haml
 autocmd BufNewFile,BufRead *.sass setf sass
 autocmd BufNewFile,BufRead *.scss setf scss
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugins
-" Load pathogen paths
-call pathogen#infect('~/dotfiles/vim/bundle/{}')
-call pathogen#helptags()
-
 " => MRU plugin
 let MRU_Max_Entries = 400
 map <leader>f :MRU<CR>
@@ -393,7 +455,6 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
 " Vim ColorToggle
-
 function! ToggleBackground(...)
   let &background = ( &background == "dark"? "light" : "dark" )
   set cursorline

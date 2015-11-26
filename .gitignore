@@ -13,6 +13,9 @@ Thumbs.db
 .Spotlight-V100
 .Trashes
 
+" Vim bundles (managed by Vundle)
+vim
+
 # sublime settings
 Package Control.last-run
 Package Control.ca-list
