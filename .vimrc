@@ -156,7 +156,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
-set term=xterm-256color
+if !has('nvim')
+  set term=xterm-256color
+endif
 set t_Co=256
 let g:colors_name="solarized"
 
