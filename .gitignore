@@ -17,7 +17,7 @@ Thumbs.db
 vim
 
 " weechat
-.weechat/weechat.log
+.weechat/weechat*.log
 .weechat/*.pem
 .weechat/logs/
 
