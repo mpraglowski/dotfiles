@@ -18,6 +18,7 @@ vim
 
 " weechat
 .weechat/weechat.log
+.weechat/*.pem
 .weechat/logs/
 
 # sublime settings
