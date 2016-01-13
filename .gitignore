@@ -17,6 +17,7 @@ Thumbs.db
 vim
 
 " weechat
+.weechat/weechat.log
 .weechat/logs/
 
 # sublime settings
