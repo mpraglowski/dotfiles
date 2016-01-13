@@ -18,6 +18,7 @@ function doIt() {
   ln -sFf ~/dotfiles/.screenrc ~/.screenrc
   ln -sFf ~/dotfiles/.tmux.conf ~/.tmux.conf
   ln -sFf ~/dotfiles/.vimrc ~/.vimrc
+  ln -sFf ~/dotfiles/.weechat ~/.weechat
   #nvim
   mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
   ln -s ~/.vim $XDG_CONFIG_HOME/nvim

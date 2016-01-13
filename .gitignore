@@ -16,6 +16,9 @@ Thumbs.db
 " Vim bundles (managed by Vundle)
 vim
 
+" weechat
+.weechat/logs/
+
 # sublime settings
 Package Control.last-run
 Package Control.ca-list
