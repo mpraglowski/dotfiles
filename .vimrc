@@ -450,6 +450,9 @@ let g:to_github_clip_command = 'pbcopy'
 let g:to_github_clipboard = 1
 map <Leader>gh :ToGithub<CR>
 
+" YouCompleteMe
+let g:ycm_min_num_of_chars_for_completion = 2
+
 " tmux-complete
 let g:tmuxcomplete#trigger = 'omnifunc'
 " Run RSpec in tmux
