@@ -62,6 +62,9 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'zaiste/tmux.vim'
 Plugin 'saghul/vim-colortoggle'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'albfan/vim-timelapse'
+Plugin 'tpope/vim-dispatch'
+Plugin 'wellle/tmux-complete.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -447,6 +450,8 @@ let g:to_github_clip_command = 'pbcopy'
 let g:to_github_clipboard = 1
 map <Leader>gh :ToGithub<CR>
 
+" tmux-complete
+let g:tmuxcomplete#trigger = 'omnifunc'
 " Run RSpec in tmux
 let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
 
