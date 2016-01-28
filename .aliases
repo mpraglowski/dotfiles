@@ -182,3 +182,7 @@ alias konacha="bundle exec rake RAILS_ENV=test konacha:serve"
 
 # Count lines of code in current folder recursively
 alias loc="find ./ -not -type d | xargs wc -l | cut -c 1-8 | awk \'{total += (} END {print total}\')"
+
+# ccat
+# 'brew install ccat' required
+alias cat="ccat"
