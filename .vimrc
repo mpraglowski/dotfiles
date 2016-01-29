@@ -33,7 +33,7 @@ Plugin 'benmills/vimux'
 Plugin 'endel/vim-github-colorscheme'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'vim-scripts/mru.vim'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/neocomplete.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tomtom/tlib_vim'
@@ -450,8 +450,8 @@ let g:to_github_clip_command = 'pbcopy'
 let g:to_github_clipboard = 1
 map <Leader>gh :ToGithub<CR>
 
-" YouCompleteMe
-let g:ycm_min_num_of_chars_for_completion = 2
+" NeoComplete.vim
+let g:neocomplete#enable_at_startup = 1
 
 " tmux-complete
 let g:tmuxcomplete#trigger = 'omnifunc'
