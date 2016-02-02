@@ -455,10 +455,24 @@ let g:to_github_clipboard = 1
 map <Leader>gh :ToGithub<CR>
 
 " NeoComplete.vim
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " tmux-complete
-let g:tmuxcomplete#trigger = 'omnifunc'
+let g:tmuxcomplete#trigger = ''
+
 " Run RSpec in tmux
 let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
 
