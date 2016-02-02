@@ -56,7 +56,10 @@ Plugin 'jaxbot/syntastic-react'
 Plugin 'LnL7/vim-nix'
 Plugin 'mxw/vim-jsx'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'jimenezrick/vimerl'
+Plugin 'vim-erlang/vim-erlang-runtime'
+Plugin 'vim-erlang/vim-erlang-omnicomplete'
+Plugin 'vim-erlang/vim-erlang-tags'
+Plugin 'vim-erlang/vim-erlang-skeletons'
 Plugin 'vim-erlang/vim-erlang-compiler'
 Plugin 'jgdavey/tslime.vim'
 Plugin 'altercation/vim-colors-solarized'
@@ -476,3 +479,9 @@ map <Leader>. :call ToggleBackground()<CR>
 
 " Activate snipmate
 "ActivateAddons vim-snippets snipmate
+
+" vim-erlang-skeletons
+let g:erl_author="Mirosław Pragłowski"
+let g:erl_company="Solutions Factory"
+let g:erl_replace_buffer=1
+
