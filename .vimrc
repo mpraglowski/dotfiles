@@ -70,6 +70,7 @@ Plugin 'albfan/vim-timelapse'
 Plugin 'tpope/vim-dispatch'
 Plugin 'wellle/tmux-complete.vim'
 Plugin 'Matt-Deacalion/vim-systemd-syntax'
+Plugin 'edkolev/tmuxline.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
