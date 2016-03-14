@@ -28,7 +28,6 @@ Plugin 'tpope/vim-rake'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'ecomba/vim-ruby-refactoring'
 Plugin 'tonchis/vim-to-github'
-Plugin 'vim-scripts/ZoomWin'
 Plugin 'benmills/vimux'
 Plugin 'endel/vim-github-colorscheme'
 Plugin 'thoughtbot/vim-rspec'
@@ -425,10 +424,10 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
 " => Vimroom
-let g:goyo_width=100
+let g:goyo_width=80
 let g:goyo_margin_top = 2
 let g:goyo_margin_bottom = 2
-nnoremap <silent> <leader>z :Goyo<cr>
+nnoremap <silent> <leader>` :Goyo<cr>
 
 " => vim-ag aka The Silver Searcher
 if executable('ag')
@@ -448,9 +447,6 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " bind \ (backward slash) to grep shortcut
 command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap \ :Ag<SPACE>
-
-" => vim-zoomwin
-map <Leader><Leader> :ZoomWin<CR>
 
 " => vim-to-github
 let g:to_github_clip_command = 'pbcopy'
