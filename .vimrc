@@ -45,8 +45,84 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+
+Plugin 'itchyny/lightline.vim'
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'filename' ] ],
+      \   'right': [ [ 'syntastic', 'lineinfo' ], ['percent'], [ 'filetype', 'fileencoding', 'fileformat' ] ]
+      \ },
+      \ 'component_function': {
+      \   'mode':     'LightLineMode',
+      \   'fugitive': 'LightLineFugitive',
+      \   'readonly': 'LightLineReadonly',
+      \   'modified': 'LightLineModified',
+      \   'filename': 'LightLineFilename'
+      \ },
+      \ 'component_expand': {
+      \   'syntastic': 'SyntasticStatuslineFlag',
+      \ },
+      \ 'component_type': {
+      \   'syntastic': 'error',
+      \ },
+      \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+      \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
+      \ }
+
+function! LightLineMode()
+  let fname = expand('%:t')
+  return  fname == 'ControlP' ? 'CtrlP' :
+        \ fname =~ 'NERD_tree' ? 'NERDTree' :
+        \ winwidth(0) > 40 ? lightline#mode() : ''
+endfunction
+
+function! LightLineModified()
+  if &filetype == 'help'
+    return ''
+  elseif &modified
+    return '±'
+  elseif &modifiable
+    return ''
+  else
+    return ''
+  endif
+endfunction
+
+function! LightLineReadonly()
+  if &filetype == 'help'
+    return ''
+  elseif &readonly
+    return ''
+  else
+    return ''
+  endif
+endfunction
+
+function! LightLineFugitive()
+  if exists('*fugitive#head')
+    let _ = fugitive#head()
+    return strlen(_) ? ' '._ : ''
+  endif
+  return ''
+endfunction
+
+function! LightLineFilename()
+  return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
+        \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
+        \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+endfunction
+
+augroup AutoSyntastic
+  autocmd!
+  autocmd BufWritePost *.c,*.cpp call s:syntastic()
+augroup END
+function! s:syntastic()
+  SyntasticCheck
+  call lightline#update()
+endfunction
+
 Plugin 'vim-scripts/mayansmoke'
 Plugin 'tpope/vim-markdown'
 Plugin 'junegunn/goyo.vim'
@@ -169,14 +245,17 @@ if !has('nvim')
   set term=xterm-256color
 endif
 set t_Co=256
+set t_ut=
 let g:colors_name="solarized"
-
-" Enable syntax highlighting
-syntax enable
 
 " Set colorscheme
 colorscheme solarized
-set background=dark
+
+" Vim ColorToggle
+map <Leader>. :ToggleBg<CR>
+
+" Enable syntax highlighting
+syntax enable
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -412,17 +491,6 @@ map <leader>nf :NERDTreeFind<cr>
 " => vim-multiple-cursors
 let g:multi_cursor_next_key="\<C-s>"
 
-" => vim-airline config (force color)
-let g:airline_theme="solarized"
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols = {}
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
-
 " => Vimroom
 let g:goyo_width=80
 let g:goyo_margin_top = 2
@@ -480,15 +548,6 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
-
-" Vim ColorToggle
-function! ToggleBackground(...)
-  let &background = ( &background == "dark"? "light" : "dark" )
-  set cursorline
-endfunction
-
-let g:default_background_type = "dark"
-map <Leader>. :call ToggleBackground()<CR>
 
 " Activate snipmate
 "ActivateAddons vim-snippets snipmate
