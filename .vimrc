@@ -149,6 +149,11 @@ Plugin 'dleonard0/pony-vim-syntax'
 Plugin 'edkolev/tmuxline.vim'
 
 Plugin 'ruanyl/vim-eslint'
+
+Plugin 'wikitopian/hardmode'
+"autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
