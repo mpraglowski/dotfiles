@@ -148,6 +148,7 @@ Plugin 'Matt-Deacalion/vim-systemd-syntax'
 Plugin 'dleonard0/pony-vim-syntax'
 Plugin 'edkolev/tmuxline.vim'
 
+Plugin 'ruanyl/vim-eslint'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -557,3 +558,7 @@ let g:erl_author="Mirosław Pragłowski"
 let g:erl_company="Solutions Factory"
 let g:erl_replace_buffer=1
 
+" linters
+" javascript
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec = 'eslint_d'
