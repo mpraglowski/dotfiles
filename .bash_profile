@@ -52,3 +52,12 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 export NPM_PACKAGES="${HOME}/.npm"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 export PATH="$NPM_PACKAGES/bin:$PATH"
+
+# gpg keybase with out password
+# https://github.com/pstadler/keybase-gpg-github
+if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
+  source ~/.gnupg/.gpg-agent-info
+  export GPG_AGENT_INFO
+else
+  eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
+fi

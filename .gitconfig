@@ -1,6 +1,7 @@
 [user]
 	name = Mirosław Pragłowski
 	email = m@praglowski.com
+	signingkey = D5A649B4
 [alias]
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
@@ -108,3 +109,5 @@ protocol = https
 	private = true
 [github]
 	user = mpraglowski
+[commit]
+	gpgsign = true
