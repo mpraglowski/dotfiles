@@ -32,7 +32,10 @@ Plugin 'benmills/vimux'
 Plugin 'endel/vim-github-colorscheme'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'vim-scripts/mru.vim'
-Plugin 'Shougo/neocomplete.vim'
+
+" autocompletion
+Plugin 'valloric/youcompleteme'
+
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tomtom/tlib_vim'
