@@ -140,7 +140,6 @@ Plugin 'vim-erlang/vim-erlang-tags'
 Plugin 'vim-erlang/vim-erlang-skeletons'
 Plugin 'vim-erlang/vim-erlang-compiler'
 Plugin 'jgdavey/tslime.vim'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'zaiste/tmux.vim'
 Plugin 'saghul/vim-colortoggle'
 Plugin 'airblade/vim-gitgutter'
@@ -149,6 +148,9 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'wellle/tmux-complete.vim'
 Plugin 'Matt-Deacalion/vim-systemd-syntax'
 Plugin 'dleonard0/pony-vim-syntax'
+
+" colorschemes
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'edkolev/tmuxline.vim'
 
 Plugin 'ruanyl/vim-eslint'
@@ -255,9 +257,10 @@ if !has('nvim')
 endif
 set t_Co=256
 set t_ut=
-let g:colors_name="solarized"
 
 " Set colorscheme
+let g:colors_name="solarized"
+set background=dark
 colorscheme solarized
 
 " Vim ColorToggle
