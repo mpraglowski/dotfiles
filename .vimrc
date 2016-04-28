@@ -17,7 +17,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'gorkunov/smartgf.vim'
 Plugin 'rking/ag.vim'
 Plugin 'sjl/splice.vim'
-Plugin 'OrangeT/vim-csharp'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'skammer/vim-css-color'
 Plugin 'chriseppstein/vim-haml'
@@ -170,9 +169,6 @@ nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
