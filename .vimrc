@@ -49,6 +49,8 @@ map <c-b> :CtrlPBuffer<cr>
 let g:ctrlp_max_height = 20
 let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 
+Plugin 'junegunn/vim-easy-align'
+au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
 
 Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
