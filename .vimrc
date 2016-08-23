@@ -17,6 +17,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'gorkunov/smartgf.vim'
 Plugin 'rking/ag.vim'
 Plugin 'sjl/splice.vim'
+Plugin 'tpope/vim-dispatch'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'skammer/vim-css-color'
 Plugin 'chriseppstein/vim-haml'
@@ -33,7 +34,8 @@ Plugin 'thoughtbot/vim-rspec'
 Plugin 'vim-scripts/mru.vim'
 
 " autocompletion
-Plugin 'valloric/youcompleteme'
+"Plugin 'valloric/youcompleteme'
+Plugin 'Shougo/neocomplete.vim'
 
 Plugin 'scrooloose/nerdtree'
 
@@ -62,6 +64,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
+
+Plugin 'andrewradev/simple_bookmarks.vim'
 
 Plugin 'itchyny/lightline.vim'
 let g:lightline = {
@@ -133,7 +137,7 @@ endfunction
 
 augroup AutoSyntastic
   autocmd!
-  autocmd BufWritePost *.c,*.cpp call s:syntastic()
+  autocmd BufWritePost * call s:syntastic()
 augroup END
 function! s:syntastic()
   SyntasticCheck
@@ -150,7 +154,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_loc_list_height = 5
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
+let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_javascript_eslint_exec = 'eslint_d'
 
@@ -167,7 +171,6 @@ Plugin 'zaiste/tmux.vim'
 Plugin 'saghul/vim-colortoggle'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'albfan/vim-timelapse'
-Plugin 'tpope/vim-dispatch'
 Plugin 'wellle/tmux-complete.vim'
 Plugin 'Matt-Deacalion/vim-systemd-syntax'
 Plugin 'dleonard0/pony-vim-syntax'
@@ -181,6 +184,9 @@ Plugin 'ruanyl/vim-eslint'
 Plugin 'wikitopian/hardmode'
 "autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+
+Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/vimshell.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
