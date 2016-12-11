@@ -81,7 +81,8 @@
 	untracked = cyan
 
 [diff]
-	tool = p4mergetool
+	tool = diffmerge
+	compactionHeuristic = true
 [merge]
   tool = splice
 [mergetool]
@@ -100,8 +101,6 @@
 	cmd = gvim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
 [mergetool "vimdiff3"]
 	cmd = vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
-[difftool "p4mergetool"]
-	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $LOCAL $REMOTE
 
 [hub]
 protocol = https

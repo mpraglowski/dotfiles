@@ -186,3 +186,6 @@ alias loc="find ./ -not -type d | xargs wc -l | cut -c 1-8 | awk \'{total += (} 
 # ccat
 # 'brew install ccat' required
 alias cat="ccat"
+
+# iA Writer
+alias ia="open $1 -a /Applications/iA\ Writer.app/Contents/MacOS/iA\ Writer"

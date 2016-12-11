@@ -64,6 +64,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
+Plugin 'jiangmiao/auto-pairs'
 
 Plugin 'andrewradev/simple_bookmarks.vim'
 
@@ -86,7 +87,7 @@ let g:lightline = {
       \   'syntastic': 'SyntasticStatuslineFlag',
       \ },
       \ 'component_type': {
-      \   'syntastic': 'error',
+      \   'syntastic': 'warningmsg',
       \ },
       \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
       \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
@@ -520,7 +521,7 @@ map <leader>nf :NERDTreeFind<cr>
 let g:multi_cursor_next_key="\<C-s>"
 
 " => Vimroom
-let g:goyo_width=80
+let g:goyo_width=120
 let g:goyo_margin_top = 2
 let g:goyo_margin_bottom = 2
 nnoremap <silent> <leader>` :Goyo<cr>
@@ -586,6 +587,10 @@ let g:erl_company="Solutions Factory"
 let g:erl_replace_buffer=1
 
 " linters
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 " javascript
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exec = 'eslint_d'
