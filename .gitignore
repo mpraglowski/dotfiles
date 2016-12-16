@@ -16,11 +16,6 @@ Thumbs.db
 " Vim bundles (managed by Vundle)
 vim
 
-" weechat
-.weechat/weechat*.log
-.weechat/*.pem
-.weechat/logs/
-
 # sublime settings
 Package Control.last-run
 Package Control.ca-list
@@ -29,3 +24,10 @@ Package Control.system-ca-bundle
 Package Control.cache/
 Package Control.ca-certs/
 sublime/User/GoSublime/osx-x64/log.txt
+
+# irssi
+.irssi/*.pem
+.irssi/config.autosave
+.irssi/config.bak
+.irssi/_windowlist
+.irssi/keepnick
