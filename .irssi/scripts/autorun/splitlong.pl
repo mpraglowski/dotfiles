@@ -1,1 +1,1 @@
-splitlong.pl
+../../splitlong.pl

@@ -1,1 +1,1 @@
-autorejoin.pl
+../../autorejoin.pl

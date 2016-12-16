@@ -1,1 +1,1 @@
-autochannel.pl
+../../autochannel.pl

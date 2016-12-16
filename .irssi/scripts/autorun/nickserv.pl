@@ -1,1 +1,1 @@
-nickserv.pl
+../../nickserv.pl
