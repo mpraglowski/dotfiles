@@ -189,3 +189,6 @@ alias cat="ccat"
 
 # iA Writer
 alias ia="open $1 -a /Applications/iA\ Writer.app/Contents/MacOS/iA\ Writer"
+
+# IRC / irrsi
+alias irc="irssi"
