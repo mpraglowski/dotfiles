@@ -378,4 +378,14 @@ windows = {
   };
 };
 mainwindows = { 2 = { first_line = "1"; lines = "37"; }; };
-ignores = ( { level = "MODES"; servertag = "slack"; } );
+ignores = (
+  { level = "MODES"; servertag = "slnfactory"; },
+  { level = "MODES"; servertag = "arkency"; },
+  { level = "MODES"; servertag = "wrocnet"; },
+  { level = "MODES"; servertag = "devspl"; },
+  { level = "MODES"; servertag = "civ5arkency"; },
+  { level = "MODES"; servertag = "dddce"; },
+  { level = "MODES"; servertag = "dddwro"; },
+  { level = "MODES"; servertag = "elixir"; },
+  { level = "MODES"; servertag = "drug"; }
+);
