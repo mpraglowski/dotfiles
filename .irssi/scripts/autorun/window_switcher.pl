@@ -1,1 +1,1 @@
-../../window_switcher.pl
+../window_switcher.pl

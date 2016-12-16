@@ -1,1 +1,1 @@
-../../typofix.pl
+../typofix.pl

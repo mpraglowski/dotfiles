@@ -1,1 +1,1 @@
-../../tmux_away.pl
+../tmux_away.pl

@@ -1,1 +1,1 @@
-../../slack_complete.pl
+../slack_complete.pl

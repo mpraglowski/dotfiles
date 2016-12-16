@@ -1,1 +1,1 @@
-../../slack_emoji.pl
+../slack_emoji.pl

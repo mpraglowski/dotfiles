@@ -1,1 +1,1 @@
-../../fix_slackirc.pl
+../fix_slackirc.pl

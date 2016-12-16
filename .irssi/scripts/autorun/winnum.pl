@@ -1,1 +1,1 @@
-../../winnum.pl
+../winnum.pl

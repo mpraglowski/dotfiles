@@ -1,1 +1,1 @@
-../../trackbar22.pl
+../trackbar22.pl

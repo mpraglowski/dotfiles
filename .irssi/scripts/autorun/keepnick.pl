@@ -1,1 +1,1 @@
-../../keepnick.pl
+../keepnick.pl
