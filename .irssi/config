@@ -84,7 +84,16 @@ servers = (
     password <PASSWORD>";
     use_ssl = "yes";
     ssl_verify = "no";
-    autoconnect = "no";
+    autoconnect = "yes";
+  },
+  {
+    address = "ddd-cqrs-es.irc.slack.com";
+    chatnet = "dddcqrses";
+    port = "6667";
+    password <PASSWORD>";
+    use_ssl = "yes";
+    ssl_verify = "no";
+    autoconnect = "yes";
   }
 );
 
@@ -106,6 +115,7 @@ chatnets = {
   dddwro = { type = "IRC"; nick = "mpraglowski"; };
   elixir = { type = "IRC"; nick = "mpraglowski"; };
   drug = { type = "IRC"; nick = "mpraglowski"; };
+  dddcqrses = { type = "IRC"; nick = "mpraglowski"; };
 };
 
 channels = (
@@ -116,7 +126,21 @@ channels = (
   { name = "#wroclaw"; chatnet = "devspl"; autojoin = "yes"; },
   { name = "#core"; chatnet = "wrocnet"; autojoin = "yes"; },
   { name = "#ddd-wro"; chatnet = "dddwro"; autojoin = "yes"; },
-  { name = "#drug"; chatnet = "drug"; autojoin = "yes"; }
+  { name = "#drug"; chatnet = "drug"; autojoin = "yes"; },
+  { name = "#dddeu"; chatnet = "dddcqrses"; autojoin = "yes"; },
+  {
+    name = "#event-storming";
+    chatnet = "dddcqrses";
+    autojoin = "yes";
+  },
+  { name = "#eventsourcing"; chatnet = "dddcqrses"; autojoin = "yes"; },
+  { name = "#eventstore"; chatnet = "dddcqrses"; autojoin = "yes"; },
+  { name = "#general"; chatnet = "dddcqrses"; autojoin = "yes"; },
+  {
+    name = "#sql-stream-store";
+    chatnet = "dddcqrses";
+    autojoin = "yes";
+  }
 );
 
 aliases = {
