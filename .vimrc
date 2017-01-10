@@ -23,13 +23,14 @@ Plugin 'skammer/vim-css-color'
 Plugin 'chriseppstein/vim-haml'
 Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
+
+Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
-Plugin 'vim-ruby/vim-ruby'
+
 Plugin 'ecomba/vim-ruby-refactoring'
 Plugin 'tonchis/vim-to-github'
 Plugin 'benmills/vimux'
-Plugin 'endel/vim-github-colorscheme'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'vim-scripts/mru.vim'
 
@@ -64,7 +65,6 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
-Plugin 'jiangmiao/auto-pairs'
 
 Plugin 'andrewradev/simple_bookmarks.vim'
 

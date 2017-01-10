@@ -4,3 +4,4 @@
 # ruby
 .ruby-version
 .idea
+**/tags
