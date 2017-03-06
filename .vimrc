@@ -40,7 +40,11 @@ Plugin 'Shougo/neocomplete.vim'
 
 Plugin 'scrooloose/nerdtree'
 
-Plugin 'kien/ctrlp.vim'
+Plugin 'haya14busa/incsearch.vim'
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
 Plugin 'FelikZ/ctrlp-py-matcher'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
