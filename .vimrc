@@ -40,6 +40,7 @@ Plugin 'Shougo/neocomplete.vim'
 
 Plugin 'scrooloose/nerdtree'
 
+Plugin 'taglist.vim'
 Plugin 'haya14busa/incsearch.vim'
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
