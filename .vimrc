@@ -297,6 +297,10 @@ let g:colors_name="solarized"
 set background=dark
 colorscheme solarized
 
+" 80 columns limit
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
+let &colorcolumn="80,".join(range(120,999),",")
+
 " Vim ColorToggle
 map <Leader>. :ToggleBg<CR>
 
