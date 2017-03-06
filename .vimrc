@@ -61,6 +61,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 Plugin 'junegunn/vim-easy-align'
 au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
 
+Plugin 'Raimondi/delimitMate'
 Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'garbas/vim-snipmate'
