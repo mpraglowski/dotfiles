@@ -540,7 +540,7 @@ let g:multi_cursor_next_key="\<C-s>"
 let g:goyo_width=120
 let g:goyo_margin_top = 2
 let g:goyo_margin_bottom = 2
-nnoremap <silent> <leader>` :Goyo<cr>
+nnoremap <silent> <leader>, :Goyo<cr>
 
 " => vim-ag aka The Silver Searcher
 if executable('ag')
