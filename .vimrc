@@ -57,6 +57,8 @@ let g:ctrlp_cmd = 'CtrlP'
 map <leader>j :CtrlP<cr>
 map <c-b> :CtrlPBuffer<cr>
 nnoremap <c-p> :CtrlPTag<cr>
+nnoremap <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+nnoremap <C-}> :pop<CR>
 
 let g:ctrlp_max_height = 20
 let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
