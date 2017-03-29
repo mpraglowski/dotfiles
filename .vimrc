@@ -16,12 +16,19 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'gorkunov/smartgf.vim'
 
+" search in files
 Plugin 'mileszs/ack.vim'
 " bind \ (backward slash) to grep shortcut
 command! -nargs=+ -complete=file -bar Ack silent! grep! <args>|cwindow|redraw!
 nnoremap \ :Ack!<SPACE>
 " bind K to grep word under cursor
 nnoremap K :Ack! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" search in open files
+Plugin 'haya14busa/incsearch.vim'
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
 Plugin 'sjl/splice.vim'
 Plugin 'tpope/vim-dispatch'
@@ -49,11 +56,6 @@ Plugin 'scrooloose/nerdtree'
 
 Plugin 'taglist.vim'
 Plugin 'craigemery/vim-autotag'
-Plugin 'haya14busa/incsearch.vim'
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'FelikZ/ctrlp-py-matcher'
 let g:ctrlp_working_path_mode = 0
