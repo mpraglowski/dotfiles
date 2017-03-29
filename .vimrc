@@ -15,7 +15,14 @@ Plugin 'VundleVim/Vundle.vim'
 " Vundle plugins
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'gorkunov/smartgf.vim'
-Plugin 'rking/ag.vim'
+
+Plugin 'mileszs/ack.vim'
+" bind \ (backward slash) to grep shortcut
+command! -nargs=+ -complete=file -bar Ack silent! grep! <args>|cwindow|redraw!
+nnoremap \ :Ack!<SPACE>
+" bind K to grep word under cursor
+nnoremap K :Ack! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
 Plugin 'sjl/splice.vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'hail2u/vim-css3-syntax'
@@ -541,25 +548,6 @@ let g:goyo_width=120
 let g:goyo_margin_top = 2
 let g:goyo_margin_bottom = 2
 nnoremap <silent> <leader>, :Goyo<cr>
-
-" => vim-ag aka The Silver Searcher
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
-
-" bind K to grep word under cursor
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-
-" bind \ (backward slash) to grep shortcut
-command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-nnoremap \ :Ag<SPACE>
 
 " => vim-to-github
 let g:to_github_clip_command = 'pbcopy'
