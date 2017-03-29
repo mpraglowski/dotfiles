@@ -30,6 +30,15 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
+" tags
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
+set tags=./tags;
+let g:easytags_dynamic_files = 1
+
+Plugin 'majutsushi/tagbar'
+nnoremap <silent> <Leader>. :TagbarToggle<CR>
+
 Plugin 'sjl/splice.vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'hail2u/vim-css3-syntax'
@@ -54,8 +63,6 @@ Plugin 'Shougo/neocomplete.vim'
 
 Plugin 'scrooloose/nerdtree'
 
-Plugin 'taglist.vim'
-Plugin 'craigemery/vim-autotag'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'FelikZ/ctrlp-py-matcher'
 let g:ctrlp_working_path_mode = 0
