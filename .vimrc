@@ -35,6 +35,7 @@ Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
 set tags=./tags;
 let g:easytags_dynamic_files = 1
+let g:easytags_async = 1
 
 Plugin 'majutsushi/tagbar'
 nnoremap <silent> <Leader>. :TagbarToggle<CR>
