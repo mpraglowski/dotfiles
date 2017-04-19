@@ -58,6 +58,10 @@ Plugin 'benmills/vimux'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'vim-scripts/mru.vim'
 
+" tmux integration
+Plugin 'zaiste/tmux.vim'
+Plugin 'wellle/tmux-complete.vim'
+
 " autocompletion
 "Plugin 'valloric/youcompleteme'
 Plugin 'Shougo/neocomplete.vim'
@@ -209,11 +213,9 @@ autocmd BufRead,BufNewFile *.erl,*.es.*.hrl,*.yaws,*.xrl set expandtab
 au BufNewFile,BufRead *.erl,*.es,*.hrl,*.yaws,*.xrl setf Erlang
 
 Plugin 'jgdavey/tslime.vim'
-Plugin 'zaiste/tmux.vim'
 Plugin 'saghul/vim-colortoggle'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'albfan/vim-timelapse'
-Plugin 'wellle/tmux-complete.vim'
 Plugin 'Matt-Deacalion/vim-systemd-syntax'
 Plugin 'dleonard0/pony-vim-syntax'
 
