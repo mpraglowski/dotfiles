@@ -20,9 +20,13 @@ Plugin 'gorkunov/smartgf.vim'
 Plugin 'mileszs/ack.vim'
 " bind \ (backward slash) to grep shortcut
 command! -nargs=+ -complete=file -bar Ack silent! grep! <args>|cwindow|redraw!
-nnoremap \ :Ack!<SPACE>
+nnoremap \ :Ack<SPACE>
 " bind K to grep word under cursor
-nnoremap K :Ack! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nnoremap K :Ack "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" => Vim grep
+let Grep_Skip_Dirs = 'RCS CVS SCCS .git .svn generated app/assets'
+set grepprg=ack\ -nH\ --nocolor\ --nogroup
 
 " search in open files
 Plugin 'haya14busa/incsearch.vim'
@@ -570,10 +574,6 @@ let g:user_zen_mode='a'
 " => snipMate (beside <TAB> support <CTRL-j>)
 ino <c-j> <c-r>=snipMate#TriggerSnippet()<cr>
 snor <c-j> <esc>i<right><c-r>=snipMate#TriggerSnippet()<cr>
-
-" => Vim grep
-let Grep_Skip_Dirs = 'RCS CVS SCCS .git .svn generated'
-set grepprg=/bin/grep\ -nH
 
 " => Nerd Tree
 map <leader>nn :NERDTreeToggle<cr>
