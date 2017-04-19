@@ -191,11 +191,23 @@ let g:syntastic_javascript_eslint_exec = 'eslint_d'
 Plugin 'LnL7/vim-nix'
 Plugin 'mxw/vim-jsx'
 Plugin 'terryma/vim-multiple-cursors'
+
+" Erlang setup
 Plugin 'vim-erlang/vim-erlang-runtime'
 Plugin 'vim-erlang/vim-erlang-omnicomplete'
 Plugin 'vim-erlang/vim-erlang-tags'
 Plugin 'vim-erlang/vim-erlang-skeletons'
+" vim-erlang-skeletons
 Plugin 'vim-erlang/vim-erlang-compiler'
+let g:erl_author="Mirosław Pragłowski"
+let g:erl_company="Solutions Factory"
+let g:erl_replace_buffer=1
+Plugin 'vim-erlang/vim-dialyzer'
+Plugin 'edkolev/erlang-motions.vim'
+
+autocmd BufRead,BufNewFile *.erl,*.es.*.hrl,*.yaws,*.xrl set expandtab
+au BufNewFile,BufRead *.erl,*.es,*.hrl,*.yaws,*.xrl setf Erlang
+
 Plugin 'jgdavey/tslime.vim'
 Plugin 'zaiste/tmux.vim'
 Plugin 'saghul/vim-colortoggle'
@@ -603,11 +615,6 @@ map <Leader>a :call RunAllSpecs()<CR>
 
 " Activate snipmate
 "ActivateAddons vim-snippets snipmate
-
-" vim-erlang-skeletons
-let g:erl_author="Mirosław Pragłowski"
-let g:erl_company="Solutions Factory"
-let g:erl_replace_buffer=1
 
 " linters
 let g:syntastic_always_populate_loc_list = 1
