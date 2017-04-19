@@ -33,7 +33,7 @@ map g/ <Plug>(incsearch-stay)
 " tags
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
-set tags=./tags;
+set tags=./.tags;
 let g:easytags_dynamic_files = 1
 let g:easytags_async = 1
 
@@ -322,6 +322,15 @@ colorscheme solarized
 " 80 columns limit
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 let &colorcolumn="80,".join(range(120,999),",")
+
+" Force the cursor onto a new line after 80 characters
+" set textwidth=80
+" However, in Git commit messages, let’s make it 72 characters
+autocmd FileType gitcommit set textwidth=72
+" Colour the 81st (or 73rd) column so that we don’t type over our limit
+"set colorcolumn=+1
+" In Git commit messages, also colour the 51st column (for titles)
+autocmd FileType gitcommit set colorcolumn+=51
 
 " Vim ColorToggle
 map <Leader>b :ToggleBg<CR>
