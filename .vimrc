@@ -211,12 +211,13 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vim-erlang/vim-erlang-runtime'
 Plugin 'vim-erlang/vim-erlang-omnicomplete'
 Plugin 'vim-erlang/vim-erlang-tags'
+let g:erlang_tags_outfile = './.tags'
 Plugin 'vim-erlang/vim-erlang-skeletons'
 " vim-erlang-skeletons
-Plugin 'vim-erlang/vim-erlang-compiler'
 let g:erl_author="Mirosław Pragłowski"
 let g:erl_company="Solutions Factory"
 let g:erl_replace_buffer=1
+Plugin 'vim-erlang/vim-erlang-compiler'
 Plugin 'vim-erlang/vim-dialyzer'
 Plugin 'edkolev/erlang-motions.vim'
 
