@@ -3,7 +3,7 @@ servers = (
     address = "chat.freenode.net";
     chatnet = "freenode";
     port = "6667";
-    autoconnect = "no";
+    autoconnect = "yes";
   },
   {
     address = "solutionsfactory.irc.slack.com";
@@ -118,6 +118,7 @@ servers = (
 chatnets = {
   freenode = {
     type = "IRC";
+    nick = "mpraglowski";
     autosendcmd = "/msg nickserv identify <PASSWORD>";
     max_kicks = "1";
     max_msgs = "4";
@@ -142,6 +143,7 @@ channels = (
   { name = "#arkency"; chatnet = "arkency"; autojoin = "yes"; },
   { name = "#billetto"; chatnet = "arkency"; autojoin = "yes"; },
   { name = "#zmirek"; chatnet = "arkency"; autojoin = "yes"; },
+  { name = "#rails_event_store"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#general"; chatnet = "slnfactory"; autojoin = "yes"; },
   { name = "#wroclaw"; chatnet = "devspl"; autojoin = "yes"; },
   { name = "#core"; chatnet = "wrocnet"; autojoin = "yes"; },
