@@ -12,7 +12,7 @@ servers = (
     password <PASSWORD>";
     use_ssl = "yes";
     ssl_verify = "no";
-    autoconnect = "yes";
+    autoconnect = "no";
   },
   {
     address = "arkency.irc.slack.com";
@@ -103,6 +103,15 @@ servers = (
     use_ssl = "yes";
     ssl_verify = "no";
     autoconnect = "yes";
+  },
+  {
+    address = "railsddd.irc.slack.com";
+    chatnet = "railsddd";
+    port = "6667";
+    password <PASSWORD>";
+    use_ssl = "yes";
+    ssl_verify = "no";
+    autoconnect = "yes";
   }
 );
 
@@ -126,6 +135,7 @@ chatnets = {
   drug = { type = "IRC"; nick = "mpraglowski"; };
   dddcqrses = { type = "IRC"; nick = "mpraglowski"; };
   wrocloverb = { type = "IRC"; nick = "mpraglowski"; };
+  railsddd = { type = "IRC"; nick = "mpraglowski"; };
 };
 
 channels = (
@@ -135,6 +145,7 @@ channels = (
   { name = "#general"; chatnet = "slnfactory"; autojoin = "yes"; },
   { name = "#wroclaw"; chatnet = "devspl"; autojoin = "yes"; },
   { name = "#core"; chatnet = "wrocnet"; autojoin = "yes"; },
+  { name = "#res"; chatnet = "railsddd"; autojoin = "yes"; },
   { name = "#ddd-wro"; chatnet = "dddwro"; autojoin = "yes"; },
   { name = "#drug"; chatnet = "drug"; autojoin = "yes"; },
   { name = "#dddeu"; chatnet = "dddcqrses"; autojoin = "yes"; },
