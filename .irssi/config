@@ -342,7 +342,7 @@ settings = {
   "perl/core/scripts" = {
     awl_shared_sbar = "OFF";
     awl_display_header = "$C";
-    awl_hide_empty = "1";
+    awl_hide_empty = "2";
     awl_columns = "1";
 
     ### For Solarized adv_windowlist.pl script
