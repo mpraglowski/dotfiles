@@ -9,5 +9,6 @@ QT=/usr/local/opt/qt@5.5/bin
 RUBY=/usr/local/rvm/rubies/ruby-2.3.1/bin
 HASKELL=$HOME/Library/Haskell/bin
 RVM=$HOME/.rvm/bin
+IMAGEMAGICK=/usr/local/opt/imagemagick@6/bin
 
-export PATH=$GOBIN:$HEROKU:$SQLITE:$QT:$RUBY:$HASKELL:$RVM:/usr/local/bin:$PATH
+export PATH=$IMAGEMAGICK:$GOBIN:$HEROKU:$SQLITE:$QT:$RUBY:$HASKELL:$RVM:/usr/local/bin:$PATH
