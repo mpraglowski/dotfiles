@@ -192,3 +192,6 @@ alias ia="open $1 -a /Applications/iA\ Writer.app/Contents/MacOS/iA\ Writer"
 
 # IRC / irrsi
 alias irc="irssi"
+
+# vim => nvim
+alias vim="nvim"
