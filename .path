@@ -1,18 +1,13 @@
-export PATH=/usr/local/bin:$PATH
-
-# Add RVM to PATH for scripting
-PATH=$PATH:$HOME/.rvm/bin
-
-# Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
 # Go tools
-export GOROOT=$HOME/go
-export PATH=$PATH:$GOROOT/bin
+export GOROOT=/usr/local/opt/go/libexec
+export GOBIN=$GOROOT/bin
 export GOPATH=$HOME/Projects/go
 
-# Haskell
-export PATH="$HOME/Library/Haskell/bin:$PATH"
+HEROKU=/usr/local/opt/heroku/bin
+SQLITE=/usr/local/opt/sqlite/bin
+QT=/usr/local/opt/qt@5.5/bin
+RUBY=/usr/local/rvm/rubies/ruby-2.3.1/bin
+HASKELL=$HOME/Library/Haskell/bin
+RVM=$HOME/.rvm/bin
 
-# Ruby
-export PATH="/usr/local/rvm/gems/ruby-2.1.2/bin:$PATH"
+export PATH=$GOBIN:$HEROKU:$SQLITE:$QT:$RUBY:$HASKELL:$RVM:/usr/local/bin:$PATH
