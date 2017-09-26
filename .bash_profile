@@ -43,7 +43,7 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+eval "$(rbenv init -)"
 
 # If possible, add tab completion for many git commands
 [ -f ~/.git_completion ] && source ~/.git_completion
