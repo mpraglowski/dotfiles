@@ -217,6 +217,12 @@ au BufNewFile,BufRead *.erl,*.es,*.hrl,*.yaws,*.xrl setf Erlang
 Plugin 'jgdavey/tslime.vim'
 Plugin 'saghul/vim-colortoggle'
 Plugin 'airblade/vim-gitgutter'
+" GitGutter styling to use · instead of +/-
+let g:gitgutter_sign_added = '∙'
+let g:gitgutter_sign_modified = '∙'
+let g:gitgutter_sign_removed = '∙'
+let g:gitgutter_sign_modified_removed = '∙'
+
 Plugin 'albfan/vim-timelapse'
 Plugin 'Matt-Deacalion/vim-systemd-syntax'
 Plugin 'dleonard0/pony-vim-syntax'
