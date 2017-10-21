@@ -73,6 +73,8 @@ brew install tree
 brew install ack
 brew install the_silver_searcher
 brew install htop
+brew install gnu-sed
+brew install hh
 ```
 
 # ruby
@@ -132,4 +134,10 @@ brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/32596089dd
 brew services start elasticsearch@1.7
 gem install engineyard
 cd ~/arkency/billetto && touch tmp/pids/sidekiq.pid
+```
+
+# apps
+
+```
+brew install irssi
 ```
