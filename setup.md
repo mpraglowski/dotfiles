@@ -14,6 +14,7 @@
 brew install ccat
 brew install cmake
 brew install ctags
+brew install fzf
 ```
 
 # git
