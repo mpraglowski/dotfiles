@@ -593,3 +593,7 @@ let g:syntastic_check_on_wq = 0
 " javascript
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exec = 'eslint_d'
+
+" Debugging helpers
+autocmd BufEnter *.rb iabbr ppp require 'pry';binding.pry
+autocmd BufEnter *.rb iabbr bbb require 'byebug';debugger
