@@ -46,13 +46,11 @@ let g:easytags_async = 1
 Plugin 'majutsushi/tagbar'
 nnoremap <silent> <Leader>. :TagbarToggle<CR>
 
+Plugin 'sheerun/vim-polyglot'
+
 Plugin 'sjl/splice.vim'
 Plugin 'tpope/vim-dispatch'
-Plugin 'hail2u/vim-css3-syntax'
 Plugin 'skammer/vim-css-color'
-Plugin 'chriseppstein/vim-haml'
-Plugin 'pangloss/vim-javascript'
-Plugin 'elzr/vim-json'
 
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
@@ -197,8 +195,6 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_javascript_eslint_exec = 'eslint_d'
 
-Plugin 'LnL7/vim-nix'
-Plugin 'mxw/vim-jsx'
 Plugin 'terryma/vim-multiple-cursors'
 
 " Erlang setup
@@ -228,7 +224,6 @@ let g:gitgutter_sign_removed = '∙'
 let g:gitgutter_sign_modified_removed = '∙'
 
 Plugin 'albfan/vim-timelapse'
-Plugin 'Matt-Deacalion/vim-systemd-syntax'
 Plugin 'dleonard0/pony-vim-syntax'
 
 " colorschemes
