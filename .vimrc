@@ -87,6 +87,8 @@ nmap <C-t> :Tags<CR>
 nmap <C-p> :Files<CR>
 nmap <C-a> :Ag<CR>
 
+Plugin 'qpkorr/vim-bufkill'
+map <C-w> :BD<cr>
 Plugin 'junegunn/vim-easy-align'
 au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
 
