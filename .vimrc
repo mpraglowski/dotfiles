@@ -1,6 +1,5 @@
 set runtimepath+=~/.vim
 set rtp+=~/.vim/bundle/vim-colors-solarized
-set rtp+=/usr/local/opt/fzf
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
@@ -81,9 +80,12 @@ let g:tmuxcomplete#trigger = ''
 Plugin 'scrooloose/nerdtree'
 
 Plugin 'junegunn/fzf.vim'
+set rtp+=/usr/local/opt/fzf
+set rtp+=~/.fzf
 nmap ; :Buffers<CR>
-nmap <Leader>t :Files<CR>
-nmap <Leader>r :Tags<CR>
+nmap <C-t> :Tags<CR>
+nmap <C-p> :Files<CR>
+nmap <C-a> :Ag<CR>
 
 Plugin 'junegunn/vim-easy-align'
 au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
