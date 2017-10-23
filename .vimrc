@@ -23,6 +23,8 @@ command! -nargs=+ -complete=file -bar Ack silent! grep! <args>|cwindow|redraw!
 nnoremap \ :Ack<SPACE>
 " bind K to grep word under cursor
 nnoremap K :Ack "\b<C-R><C-W>\b"<CR>:cw<CR>
+" Tell ack.vim to use ag (the Silver Searcher) instead
+let g:ackprg = 'ag --vimgrep'
 
 " => Vim grep
 let Grep_Skip_Dirs = 'RCS CVS SCCS .git .svn generated app/assets'
