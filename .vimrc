@@ -65,6 +65,8 @@ Plugin 'vim-scripts/mru.vim'
 " tmux integration
 Plugin 'zaiste/tmux.vim'
 Plugin 'wellle/tmux-complete.vim'
+Plugin 'tmux-plugins/vim-tmux-focus-events'
+Plugin 'roxma/vim-tmux-clipboard'
 
 " autocompletion
 Plugin 'valloric/youcompleteme'
@@ -344,7 +346,7 @@ colorscheme solarized
 
 " 80 columns limit
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
-let &colorcolumn="80,".join(range(120,999),",")
+let &colorcolumn="80"
 
 " Force the cursor onto a new line after 80 characters
 " set textwidth=80
