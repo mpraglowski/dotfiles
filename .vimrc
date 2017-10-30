@@ -101,7 +101,6 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'scrooloose/snipmate-snippets'
 Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
@@ -112,9 +111,12 @@ Plugin 'itchyny/lightline.vim'
 let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'filename' ] ],
-      \   'right': [ [ 'syntastic', 'lineinfo' ], ['percent'], [ 'filetype', 'fileencoding', 'fileformat' ] ]
+      \   'left':  [ [ 'mode', 'paste' ],
+      \              [ 'fugitive', 'filename' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'linter_warnings', 'linter_errors', 'linter_ok' ],
+      \              [ 'percent' ],
+      \              [ 'filetype', 'fileencoding', 'fileformat' ] ]
       \ },
       \ 'component_function': {
       \   'mode':     'LightLineMode',
@@ -124,10 +126,14 @@ let g:lightline = {
       \   'filename': 'LightLineFilename'
       \ },
       \ 'component_expand': {
-      \   'syntastic': 'SyntasticStatuslineFlag',
+      \   'linter_warnings': 'LightlineLinterWarnings',
+      \   'linter_errors': 'LightlineLinterErrors',
+      \   'linter_ok': 'LightlineLinterOK'
       \ },
       \ 'component_type': {
-      \   'syntastic': 'warningmsg',
+      \   'linter_warnings': 'warning',
+      \   'linter_errors': 'error',
+      \   'linter_ok': 'ok'
       \ },
       \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
       \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
@@ -176,28 +182,45 @@ function! LightLineFilename()
         \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
 endfunction
 
-augroup AutoSyntastic
+Plugin 'w0rp/ale'
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+augroup AutoLinter
   autocmd!
-  autocmd BufWritePost * call s:syntastic()
+  autocmd BufWritePost * call s:linter()
 augroup END
-function! s:syntastic()
-  SyntasticCheck
+function! s:linter()
+  ALELint
   call lightline#update()
 endfunction
+
+" ale + lightline
+function! LightlineLinterWarnings() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:counts.total == 0 ? '' : printf('%d --', all_non_errors)
+endfunction
+
+function! LightlineLinterErrors() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:counts.total == 0 ? '' : printf('%d >>', all_errors)
+endfunction
+
+function! LightlineLinterOK() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:counts.total == 0 ? '✓' : ''
+endfunction
+
 
 Plugin 'vim-scripts/mayansmoke'
 Plugin 'tpope/vim-markdown'
 Plugin 'junegunn/goyo.vim'
 Plugin 'amix/vim-zenroom2'
-
-Plugin 'jaxbot/syntastic-react'
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_loc_list_height = 5
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ["eslint"]
-let g:syntastic_javascript_eslint_exec = 'eslint_d'
 
 Plugin 'terryma/vim-multiple-cursors'
 
