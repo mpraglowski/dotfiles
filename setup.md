@@ -75,6 +75,7 @@ brew install the_silver_searcher
 brew install htop
 brew install gnu-sed
 brew install hh
+brew install tldr
 ```
 
 # ruby
