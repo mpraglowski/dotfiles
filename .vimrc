@@ -183,8 +183,8 @@ function! LightLineFilename()
 endfunction
 
 Plugin 'w0rp/ale'
-let g:ale_sign_error = '>>'
-let g:ale_sign_warning = '--'
+let g:ale_sign_error = '!'
+let g:ale_sign_warning = '*'
 augroup AutoLinter
   autocmd!
   autocmd BufWritePost * call s:linter()
@@ -199,14 +199,14 @@ function! LightlineLinterWarnings() abort
   let l:counts = ale#statusline#Count(bufnr(''))
   let l:all_errors = l:counts.error + l:counts.style_error
   let l:all_non_errors = l:counts.total - l:all_errors
-  return l:counts.total == 0 ? '' : printf('%d --', all_non_errors)
+  return l:counts.total == 0 ? '' : printf('%d *', all_non_errors)
 endfunction
 
 function! LightlineLinterErrors() abort
   let l:counts = ale#statusline#Count(bufnr(''))
   let l:all_errors = l:counts.error + l:counts.style_error
   let l:all_non_errors = l:counts.total - l:all_errors
-  return l:counts.total == 0 ? '' : printf('%d >>', all_errors)
+  return l:counts.total == 0 ? '' : printf('%d !', all_errors)
 endfunction
 
 function! LightlineLinterOK() abort
