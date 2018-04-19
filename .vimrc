@@ -14,7 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Vundle plugins
 " Keep Plugin commands between vundle#begin/end.
-Plugin 'gorkunov/smartgf.vim'
+"Plugin 'gorkunov/smartgf.vim'
 
 " search in files
 Plugin 'mileszs/ack.vim'
@@ -45,30 +45,30 @@ set tags=./.tags;
 let g:easytags_dynamic_files = 1
 let g:easytags_async = 1
 
-Plugin 'majutsushi/tagbar'
+"Plugin 'majutsushi/tagbar'
 nnoremap <silent> <Leader>. :TagbarToggle<CR>
 
-Plugin 'sheerun/vim-polyglot'
+"Plugin 'sheerun/vim-polyglot'
 
-Plugin 'sjl/splice.vim'
-Plugin 'tpope/vim-dispatch'
-Plugin 'skammer/vim-css-color'
+"Plugin 'sjl/splice.vim'
+"Plugin 'tpope/vim-dispatch'
+"Plugin 'skammer/vim-css-color'
 
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-rake'
+"Plugin 'vim-ruby/vim-ruby'
+"Plugin 'tpope/vim-rails'
+"Plugin 'tpope/vim-rake'
 
-Plugin 'ecomba/vim-ruby-refactoring'
-Plugin 'tonchis/vim-to-github'
-Plugin 'benmills/vimux'
-Plugin 'thoughtbot/vim-rspec'
+"Plugin 'ecomba/vim-ruby-refactoring'
+"Plugin 'tonchis/vim-to-github'
+"Plugin 'benmills/vimux'
+"Plugin 'thoughtbot/vim-rspec'
 Plugin 'vim-scripts/mru.vim'
 
 " tmux integration
-Plugin 'zaiste/tmux.vim'
-Plugin 'wellle/tmux-complete.vim'
-Plugin 'tmux-plugins/vim-tmux-focus-events'
-Plugin 'roxma/vim-tmux-clipboard'
+"Plugin 'zaiste/tmux.vim'
+"Plugin 'wellle/tmux-complete.vim'
+"Plugin 'tmux-plugins/vim-tmux-focus-events'
+"Plugin 'roxma/vim-tmux-clipboard'
 
 " autocompletion
 Plugin 'valloric/youcompleteme'
@@ -81,7 +81,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " tmux-complete
 let g:tmuxcomplete#trigger = ''
 
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
 
 Plugin 'junegunn/fzf.vim'
 set rtp+=/usr/local/opt/fzf
@@ -96,18 +96,18 @@ map <C-w> :BD<cr>
 Plugin 'junegunn/vim-easy-align'
 au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
 
-Plugin 'Raimondi/delimitMate'
-Plugin 'tomtom/tlib_vim'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
-Plugin 'scrooloose/snipmate-snippets'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
+"Plugin 'Raimondi/delimitMate'
+"Plugin 'tomtom/tlib_vim'
+"Plugin 'MarcWeber/vim-addon-mw-utils'
+"Plugin 'garbas/vim-snipmate'
+"Plugin 'honza/vim-snippets'
+"Plugin 'scrooloose/snipmate-snippets'
+"Plugin 'tpope/vim-surround'
+"Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 
-Plugin 'andrewradev/simple_bookmarks.vim'
+"Plugin 'andrewradev/simple_bookmarks.vim'
 
 Plugin 'itchyny/lightline.vim'
 let g:lightline = {
@@ -224,27 +224,27 @@ Plugin 'tpope/vim-markdown'
 Plugin 'junegunn/goyo.vim'
 Plugin 'amix/vim-zenroom2'
 
-Plugin 'terryma/vim-multiple-cursors'
+"Plugin 'terryma/vim-multiple-cursors'
 
 " Erlang setup
-Plugin 'vim-erlang/vim-erlang-runtime'
-Plugin 'vim-erlang/vim-erlang-omnicomplete'
-Plugin 'vim-erlang/vim-erlang-tags'
+"Plugin 'vim-erlang/vim-erlang-runtime'
+"Plugin 'vim-erlang/vim-erlang-omnicomplete'
+"Plugin 'vim-erlang/vim-erlang-tags'
 let g:erlang_tags_outfile = './.tags'
-Plugin 'vim-erlang/vim-erlang-skeletons'
+"Plugin 'vim-erlang/vim-erlang-skeletons'
 " vim-erlang-skeletons
 let g:erl_author="Mirosław Pragłowski"
 let g:erl_company="Solutions Factory"
 let g:erl_replace_buffer=1
-Plugin 'vim-erlang/vim-erlang-compiler'
-Plugin 'vim-erlang/vim-dialyzer'
-Plugin 'edkolev/erlang-motions.vim'
+"Plugin 'vim-erlang/vim-erlang-compiler'
+"Plugin 'vim-erlang/vim-dialyzer'
+"Plugin 'edkolev/erlang-motions.vim'
 
 autocmd BufRead,BufNewFile *.erl,*.es.*.hrl,*.yaws,*.xrl set expandtab
 au BufNewFile,BufRead *.erl,*.es,*.hrl,*.yaws,*.xrl setf Erlang
 
-Plugin 'jgdavey/tslime.vim'
-Plugin 'saghul/vim-colortoggle'
+"Plugin 'jgdavey/tslime.vim'
+"Plugin 'saghul/vim-colortoggle'
 Plugin 'airblade/vim-gitgutter'
 " GitGutter styling to use · instead of +/-
 let g:gitgutter_sign_added = '∙'
@@ -252,8 +252,8 @@ let g:gitgutter_sign_modified = '∙'
 let g:gitgutter_sign_removed = '∙'
 let g:gitgutter_sign_modified_removed = '∙'
 
-Plugin 'albfan/vim-timelapse'
-Plugin 'dleonard0/pony-vim-syntax'
+"Plugin 'albfan/vim-timelapse'
+"Plugin 'dleonard0/pony-vim-syntax'
 
 " colorschemes
 Plugin 'altercation/vim-colors-solarized'
@@ -265,8 +265,8 @@ Plugin 'wikitopian/hardmode'
 "autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
-Plugin 'Shougo/unite.vim'
-Plugin 'Shougo/vimshell.vim'
+"Plugin 'Shougo/unite.vim'
+"Plugin 'Shougo/vimshell.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
