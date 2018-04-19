@@ -348,6 +348,9 @@ set number
 " Highlight current line
 set cursorline
 
+" Save to system clipboard by default
+set clipboard=unnamed,unnamedplus
+
 " Choose no compatibility with legacy vi
 set nocompatible
 
