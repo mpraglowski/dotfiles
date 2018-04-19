@@ -35,6 +35,8 @@ Plugin 'haya14busa/incsearch.vim'
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
+map N  <Plug>(incsearch-nohl-N)
+map n  <Plug>(incsearch-nohl-n)
 
 " tags
 Plugin 'xolox/vim-misc'
