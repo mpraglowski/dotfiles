@@ -38,37 +38,33 @@ map g/ <Plug>(incsearch-stay)
 map N  <Plug>(incsearch-nohl-N)
 map n  <Plug>(incsearch-nohl-n)
 
-" tags
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-easytags'
-set tags=./.tags;
-let g:easytags_dynamic_files = 1
-let g:easytags_async = 1
+Plugin 'sheerun/vim-polyglot'
 
-"Plugin 'majutsushi/tagbar'
-nnoremap <silent> <Leader>. :TagbarToggle<CR>
-
-"Plugin 'sheerun/vim-polyglot'
-
-"Plugin 'sjl/splice.vim'
-"Plugin 'tpope/vim-dispatch'
-"Plugin 'skammer/vim-css-color'
-
-"Plugin 'vim-ruby/vim-ruby'
-"Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rails'
 "Plugin 'tpope/vim-rake'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-rsi'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-vinegar'
+Plugin 'tpope/vim-abolish'
 
-"Plugin 'ecomba/vim-ruby-refactoring'
-"Plugin 'tonchis/vim-to-github'
+Plugin 'tonchis/vim-to-github'
 "Plugin 'benmills/vimux'
 "Plugin 'thoughtbot/vim-rspec'
 Plugin 'vim-scripts/mru.vim'
 
 " tmux integration
-"Plugin 'zaiste/tmux.vim'
-"Plugin 'wellle/tmux-complete.vim'
-"Plugin 'tmux-plugins/vim-tmux-focus-events'
-"Plugin 'roxma/vim-tmux-clipboard'
+Plugin 'zaiste/tmux.vim'
+Plugin 'wellle/tmux-complete.vim'
+Plugin 'tmux-plugins/vim-tmux-focus-events'
+Plugin 'roxma/vim-tmux-clipboard'
 
 " autocompletion
 Plugin 'valloric/youcompleteme'
@@ -96,18 +92,8 @@ map <C-w> :BD<cr>
 Plugin 'junegunn/vim-easy-align'
 au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
 
-"Plugin 'Raimondi/delimitMate'
-"Plugin 'tomtom/tlib_vim'
-"Plugin 'MarcWeber/vim-addon-mw-utils'
-"Plugin 'garbas/vim-snipmate'
-"Plugin 'honza/vim-snippets'
-"Plugin 'scrooloose/snipmate-snippets'
-"Plugin 'tpope/vim-surround'
-"Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-fugitive'
-
-"Plugin 'andrewradev/simple_bookmarks.vim'
+Plugin 'Raimondi/delimitMate'
+Plugin 'andrewradev/simple_bookmarks.vim'
 
 Plugin 'itchyny/lightline.vim'
 let g:lightline = {
@@ -224,7 +210,7 @@ Plugin 'tpope/vim-markdown'
 Plugin 'junegunn/goyo.vim'
 Plugin 'amix/vim-zenroom2'
 
-"Plugin 'terryma/vim-multiple-cursors'
+Plugin 'terryma/vim-multiple-cursors'
 
 " Erlang setup
 "Plugin 'vim-erlang/vim-erlang-runtime'
@@ -243,8 +229,6 @@ let g:erl_replace_buffer=1
 autocmd BufRead,BufNewFile *.erl,*.es.*.hrl,*.yaws,*.xrl set expandtab
 au BufNewFile,BufRead *.erl,*.es,*.hrl,*.yaws,*.xrl setf Erlang
 
-"Plugin 'jgdavey/tslime.vim'
-"Plugin 'saghul/vim-colortoggle'
 Plugin 'airblade/vim-gitgutter'
 " GitGutter styling to use · instead of +/-
 let g:gitgutter_sign_added = '∙'
@@ -252,7 +236,7 @@ let g:gitgutter_sign_modified = '∙'
 let g:gitgutter_sign_removed = '∙'
 let g:gitgutter_sign_modified_removed = '∙'
 
-"Plugin 'albfan/vim-timelapse'
+Plugin 'albfan/vim-timelapse'
 "Plugin 'dleonard0/pony-vim-syntax'
 
 " colorschemes
@@ -264,9 +248,6 @@ Plugin 'ruanyl/vim-eslint'
 Plugin 'wikitopian/hardmode'
 "autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
-
-"Plugin 'Shougo/unite.vim'
-"Plugin 'Shougo/vimshell.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
