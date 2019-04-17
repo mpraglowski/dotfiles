@@ -64,7 +64,6 @@ sh bootstrap.sh
 ```
 # download http://ethanschoonover.com/solarized
 # download & install SourceCode Pro for Powerline from https://github.com/powerline/fonts
-brew cask install iterm2
 brew install tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux source ~/.tmux.conf
