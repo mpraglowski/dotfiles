@@ -26,6 +26,10 @@ function doIt() {
   mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
   ln -s ~/.vim $XDG_CONFIG_HOME/nvim
   ln -s ~/.vimrc $XDG_CONFIG_HOME/nvim/init.vim
+  #gnupg
+  mkdir -p ~/.gnupg/.gnupg
+  ln -s ~/dotfiles/.gnupg/.gpg.conf ~/.gnupg/.gpg.conf
+  ln -s ~/dotfiles/.gnupg/.gpg-agent.conf ~/.gnupg/.gpg-agent.conf
 
   source ~/.bash_profile
 }

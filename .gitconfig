@@ -110,3 +110,5 @@ protocol = https
 	user = mpraglowski
 [commit]
 	gpgsign = true
+[gpg]
+	program = /usr/local/bin/gpg

@@ -29,8 +29,13 @@ pbcopy < ~/.ssh/id_rsa.pub
 
 brew install gpg
 # install keybase form https://keybase.io/docs/the_app/install_macos
+brew install gnupg
 brew install pinentry-mac
-# setup gpg-agent as described https://gist.github.com/bmhatfield/cc21ec0a3a2df963bffa3c1f884b676b
+# setup keybase's keys to be used to sign-in git commits 
+#   public key could be exported from keybase & imported into gpg: keybase pgp export -q 8782A41BD5A649B4 | gpg --import
+gpg --allow-secret-key-import --import keybase.public.key
+gpg --allow-secret-key-import --import keybase.private.key
+
 
 brew install gist
 gist login
