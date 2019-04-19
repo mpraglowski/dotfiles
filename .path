@@ -9,6 +9,18 @@ QT=/usr/local/opt/qt@5.5/bin
 HASKELL=$HOME/Library/Haskell/bin
 IMAGEMAGICK=/usr/local/opt/imagemagick@6/bin
 GPGAGENT=/usr/local/opt/gpg-agent/bin
-ELASTICSEARCH=/usr/local/opt/elasticsearch@1.7/bin
+ELASTICSEARCH=/usr/local/opt/elasticsearch@5.6/bin
+MYSQL=/usr/local/opt/mysql@5.6/bin
+OPENSSL=/usr/local/opt/openssl/bin
 
-export PATH=$IMAGEMAGICK:$GOBIN:$HEROKU:$SQLITE:$QT:$HASKELL:$GPGAGENT:$ELASTICSEARCH:/usr/local/bin:$PATH
+ICU4CBINPATH=/usr/local/opt/icu4c/bin
+ICU4CSBINPATH=/usr/local/opt/icu4c/sbin
+
+export PATH=$OPENSSL:$MYSQL:$IMAGEMAGICK:$GOBIN:$HEROKU:$SQLITE:$QT:$HASKELL:$GPGAGENT:$ELASTICSEARCH:ICU4CBINPATH:ICU4CSBINPATH:/usr/local/bin:$PATH
+
+
+export LDFLAGS="-L/usr/local/opt/mysql@5.6/lib -L/usr/local/opt/openssl/lib -L/usr/local/opt/icu4c/lib"
+export CPPFLAGS="-I/usr/local/opt/mysql@5.6/include -I/usr/local/opt/openssl/include -I/usr/local/opt/icu4c/include"
+
+export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig:/usr/local/opt/icu4c/lib/pkgconfig
+export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/

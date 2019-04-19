@@ -44,6 +44,7 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 
 eval "$(rbenv init -)"
 
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 # If possible, add tab completion for many git commands
 [ -f ~/.git_completion ] && source ~/.git_completion
 
