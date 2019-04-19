@@ -603,5 +603,5 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exec = 'eslint_d'
 
 " Debugging helpers
-autocmd BufEnter *.rb iabbr ppp require 'pry';binding.pry
-autocmd BufEnter *.rb iabbr bbb require 'byebug';debugger
+autocmd BufEnter *.rb iabbr pry require 'pry';binding.pry
+autocmd BufEnter *.rb iabbr bye require 'byebug';debugger
