@@ -241,6 +241,8 @@ let g:erl_replace_buffer=1
 "Plugin 'vim-erlang/vim-dialyzer'
 "Plugin 'edkolev/erlang-motions.vim'
 
+Plugin 'idris-hackers/idris-vim'
+
 autocmd BufRead,BufNewFile *.erl,*.es.*.hrl,*.yaws,*.xrl set expandtab
 au BufNewFile,BufRead *.erl,*.es,*.hrl,*.yaws,*.xrl setf Erlang
 
