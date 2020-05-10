@@ -16,11 +16,13 @@ OPENSSL=/usr/local/opt/openssl/bin
 ICU4CBINPATH=/usr/local/opt/icu4c/bin
 ICU4CSBINPATH=/usr/local/opt/icu4c/sbin
 
-export PATH=$OPENSSL:$MYSQL:$IMAGEMAGICK:$GOBIN:$HEROKU:$SQLITE:$QT:$HASKELL:$GPGAGENT:$ELASTICSEARCH:ICU4CBINPATH:ICU4CSBINPATH:/usr/local/bin:$PATH
+POSTGRESQL=/usr/local/opt/postgresql@10/bin
+
+export PATH=$POSTGRESQL:$OPENSSL:$MYSQL:$IMAGEMAGICK:$GOBIN:$HEROKU:$SQLITE:$QT:$HASKELL:$GPGAGENT:$ELASTICSEARCH:ICU4CBINPATH:ICU4CSBINPATH:/usr/local/bin:$PATH
 
 
-export LDFLAGS="-L/usr/local/opt/mysql@5.6/lib -L/usr/local/opt/openssl/lib -L/usr/local/opt/icu4c/lib"
-export CPPFLAGS="-I/usr/local/opt/mysql@5.6/include -I/usr/local/opt/openssl/include -I/usr/local/opt/icu4c/include"
+export LDFLAGS="-L/usr/local/opt/postgresql@10/lib -L/usr/local/opt/mysql@5.6/lib -L/usr/local/opt/openssl/lib -L/usr/local/opt/icu4c/lib"
+export CPPFLAGS="-I/usr/local/opt/postgresql@10/include -I/usr/local/opt/mysql@5.6/include -I/usr/local/opt/openssl/include -I/usr/local/opt/icu4c/include"
 
-export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig:/usr/local/opt/icu4c/lib/pkgconfig
+export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig:/usr/local/opt/icu4c/lib/pkgconfig:/usr/local/opt/postgresql@10/lib/pkgconfig
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
