@@ -170,6 +170,21 @@ function! LightLineFilename()
         \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
 endfunction
 
+function! LightlineColorSchemeUpdate()
+  if !exists('g:loaded_lightline')
+    return
+  endif
+  try
+    if g:colors_name =~# 'solarized'
+      runtime autoload/lightline/colorscheme/solarized.vim
+      call lightline#init()
+      call lightline#colorscheme()
+      call lightline#update()
+    endif
+  catch
+  endtry
+endfunction
+
 Plugin 'w0rp/ale'
 let g:ale_sign_error = '!'
 let g:ale_sign_warning = '*'
@@ -352,9 +367,20 @@ set t_Co=256
 set t_ut=
 
 " Set colorscheme
+
+function! SetBackgroundMode()
+  let s:mode = systemlist("defaults read -g AppleInterfaceStyle")[0]
+  if s:mode ==? "dark"
+    set background=dark
+  else
+    set background=light
+  endif
+endfunction
+
 let g:colors_name="solarized"
-set background=dark
+call SetBackgroundMode()
 colorscheme solarized
+
 
 " 80 columns limit
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
