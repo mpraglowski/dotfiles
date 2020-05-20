@@ -15,7 +15,6 @@ function doIt() {
   ln -sFf ~/dotfiles/.inputrc ~/.inputrc
   ln -sFf ~/dotfiles/.npmrc ~/.npmrc
   ln -sFf ~/dotfiles/.path ~/.path
-  ln -sFf ~/dotfiles/.screenrc ~/.screenrc
   ln -sFf ~/dotfiles/.tmux.conf ~/.tmux.conf
   ln -sFf ~/dotfiles/.tmux.line.conf ~/.tmux.line.conf
   ln -sFf ~/dotfiles/.vimrc ~/.vimrc
