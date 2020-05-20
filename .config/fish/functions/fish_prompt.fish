@@ -9,11 +9,8 @@ function fish_prompt
     if test "$USER" = 'root'
         echo -n (set_color red)'# '
     end
-    echo -n (set_color red)'❯'(set_color yellow)'❯'(set_color green)'❯ '
-    set_color normal
-end
+    echo -n (set_color green)'❯ '
 
-function fish_right_prompt
     set -l cmd_status $status
     if test $cmd_status -ne 0
         echo -n (set_color red)"✘ $cmd_status"
@@ -172,5 +169,6 @@ function fish_right_prompt
         echo -n ' '(set_color white)'◼'
     end
 
+    echo -n (set_color green)'❯ '
     set_color normal
 end
