@@ -1,3 +1,28 @@
+## Paths
+
+## Variables
+
+# Make vim the default editor
+set -x EDITOR vim
+
+# Prefer US English and use UTF-8
+set -x LANG en_US
+set -x LC_ALL en_US.UTF-8
+
+# Highlight section titles in manual pages
+set -x LESS_TERMCAP_md $ORANGE
+
+# Don’t clear the screen after quitting a manual page
+set -x MANPAGER "less -X"
+
+# Always enable colored `grep` output
+set -x GREP_OPTIONS --color=auto
+
+# Link Homebrew casks in `/Applications` rather than `~/Applications`
+set -x HOMEBREW_CASK_OPTS --appdir=/Applications
+
+## Aliases
+
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
