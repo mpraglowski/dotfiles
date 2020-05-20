@@ -10,7 +10,11 @@ set OPENSSL /usr/local/opt/openssl/bin
 set -gx NPM_PACKAGES ~/.npm
 set -gx NODE_PATH $NPM_PACKAGES/lib/node_modules $NODE_PATH
 
-set -gx PATH $OPENSSL $HEROKU $SQLITE $GPGAGENT /usr/local/bin $NPM_PACKAGES/bin $PATH
+# lang paths
+set python_path /usr/local/opt/python@3.8/bin
+set ruby_path /usr/local/opt/ruby/bin
+
+set -gx PATH $OPENSSL $HEROKU $SQLITE $GPGAGENT /usr/local/bin $NPM_PACKAGES/bin $python_path $ruby_path $PATH
 set -gx LIBRARY_PATH $LIBRARY_PATH /usr/local/opt/openssl/lib/
 
 ## Variables
@@ -73,9 +77,6 @@ alias cat="ccat"
 
 # iA Writer
 alias ia="open $1 -a /Applications/iA\ Writer.app/Contents/MacOS/iA\ Writer"
-
-# vim => nvim
-alias vim="nvim"
 
 # python (always3)
 alias python=/usr/local/bin/python3
