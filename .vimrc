@@ -1,5 +1,4 @@
 set runtimepath+=~/.vim
-set rtp+=~/.vim/bundle/vim-colors-solarized
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
@@ -97,7 +96,6 @@ Plugin 'andrewradev/simple_bookmarks.vim'
 
 Plugin 'itchyny/lightline.vim'
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
       \ 'active': {
       \   'left':  [ [ 'mode', 'paste' ],
       \              [ 'fugitive', 'filename' ] ],
@@ -168,21 +166,6 @@ function! LightLineFilename()
   return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
         \ ('' != expand('%:.') ? expand('%:.') : '[No Name]') .
         \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
-endfunction
-
-function! LightlineColorSchemeUpdate()
-  if !exists('g:loaded_lightline')
-    return
-  endif
-  try
-    if g:colors_name =~# 'solarized'
-      runtime autoload/lightline/colorscheme/solarized.vim
-      call lightline#init()
-      call lightline#colorscheme()
-      call lightline#update()
-    endif
-  catch
-  endtry
 endfunction
 
 Plugin 'w0rp/ale'
@@ -257,7 +240,6 @@ Plugin 'albfan/vim-timelapse'
 "Plugin 'dleonard0/pony-vim-syntax'
 
 " colorschemes
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'edkolev/tmuxline.vim'
 
 Plugin 'ruanyl/vim-eslint'
@@ -379,9 +361,7 @@ function! SetBackgroundMode()
   endif
 endfunction
 
-let g:colors_name="solarized"
-call SetBackgroundMode()
-colorscheme solarized
+" call SetBackgroundMode()
 
 
 " 80 columns limit
