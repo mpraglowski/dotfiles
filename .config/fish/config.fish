@@ -10,11 +10,14 @@ set OPENSSL /usr/local/opt/openssl/bin
 set -gx NPM_PACKAGES ~/.npm
 set -gx NODE_PATH $NPM_PACKAGES/lib/node_modules $NODE_PATH
 
+# yarn
+set icu4c_path /usr/local/opt/icu4c
+
 # lang paths
 set python_path /usr/local/opt/python@3.8/bin
 set ruby_path /usr/local/opt/ruby/bin
 
-set -gx PATH $OPENSSL $HEROKU $SQLITE $GPGAGENT /usr/local/bin $NPM_PACKAGES/bin $python_path $ruby_path $PATH
+set -gx PATH $OPENSSL $HEROKU $SQLITE $GPGAGENT /usr/local/bin $NPM_PACKAGES/bin $python_path $ruby_path $icu4c_path/bin $icu4c_path/sbin $PATH
 set -gx LIBRARY_PATH $LIBRARY_PATH /usr/local/opt/openssl/lib/
 
 ## Variables
