@@ -60,8 +60,6 @@ sh bootstrap.sh
 brew install python3 lua
 brew install vim
 pip3 install --upgrade pip setuptools wheel
-brew install neovim
-pip2 install --user --upgrade neovim
 pip3 install --user --upgrade neovim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
@@ -87,21 +85,19 @@ brew install puma/puma/puma-dev
 sudo puma-dev -setup
 puma-dev -install
 mkdir ~/.puma-dev
-brew install heroku
+brew tap heroku/brew && brew install heroku
 brew install sqlite
 ```
 
 # other dev
 ```
-brew install erlang
-brew install elixir
-brew install go
+brew install erlang elixir
 ```
 
 # webdev
 ```
 brew install yarn
-brew install node@6
+brew install node
 ```
 
 # work
@@ -110,19 +106,4 @@ brew install node@6
 ```
 brew tap homebrew/cask
 brew install chromedriver
-```
-
-## billetto
-```
-echo 3000 > ~/.puma-dev/billetto
-brew install imagemagick@6
-brew link --force imagemagick@6
-brew install libmagic
-brew install qt@5.5
-brew install v8
-brew tap phrase/brewed
-brew install phraseapp
-cd ~/arkency/billetto && ctags -R -f .tags .
-gem install engineyard
-cd ~/arkency/billetto && touch tmp/pids/sidekiq.pid
 ```
