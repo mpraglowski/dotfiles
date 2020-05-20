@@ -10,19 +10,20 @@
 ```
 
 # switch to fish shell
-
 ```
 brew install fish
 echo /usr/local/bin/fish | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/fish
 ```
 
-#base utils
+# base utils
 ```
-brew install ccat
-brew install cmake
-brew install ctags
-brew install fzf
+brew install ccat cmake ctags fzf tree
+```
+
+# moar utils
+```
+brew install make ack the_silver_searcher htop gnu-sed hh tldr
 ```
 
 # git
@@ -35,10 +36,8 @@ ssh-add -K ~/.ssh/id_rsa
 pbcopy < ~/.ssh/id_rsa.pub
 # add shh key to github
 
-brew install gpg
+brew install gpg gnupg pinentry-mac
 # install keybase form https://keybase.io/docs/the_app/install_macos
-brew install gnupg
-brew install pinentry-mac
 # setup keybase's keys to be used to sign-in git commits 
 #   public key could be exported from keybase & imported into gpg: keybase pgp export -q 8782A41BD5A649B4 | gpg --import
 gpg --allow-secret-key-import --import keybase.public.key
@@ -49,9 +48,17 @@ brew install gist
 gist login
 ```
 
+# dotfiles
+```
+git clone git@github.com:mpraglowski/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+sh bootstrap.sh
+```
+
 # vim
 ```
-brew install vim --with-lua --with-override-system-vi --with-python3
+brew install python3 lua
+brew install vim
 pip3 install --upgrade pip setuptools wheel
 brew install neovim
 pip2 install --user --upgrade neovim
@@ -59,13 +66,6 @@ pip3 install --user --upgrade neovim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 cd ~/.vim/bundle/YouCompleteMe && ./install.py --all
-```
-
-# dotfiles
-```
-git clone git@github.com:mpraglowski/dotfiles.git ~/dotfiles
-cd ~/dotfiles
-sh bootstrap.sh
 ```
 
 # terminal
@@ -78,17 +78,6 @@ tmux source ~/.tmux.conf
 # install plugins https://github.com/tmux-plugins/tpm#installing-plugins
 ```
 
-# moar utils
-```
-brew install make --with-default-names
-brew install tree
-brew install ack
-brew install the_silver_searcher
-brew install htop
-brew install gnu-sed
-brew install hh
-brew install tldr
-```
 
 # ruby
 ```
@@ -107,7 +96,6 @@ brew install sqlite
 brew install erlang
 brew install elixir
 brew install go
-brew cask install haskell-platform
 ```
 
 # webdev
