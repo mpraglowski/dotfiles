@@ -2,7 +2,6 @@
 cd "$(dirname "${BASH_SOURCE}")"
 git pull origin master
 function doIt() {
-  ln -sFf ~/dotfiles/.aliases ~/.aliases
   ln -sFf ~/dotfiles/.bash_profile ~/.bash_profile
   ln -sFf ~/dotfiles/.bash_prompt ~/.bash_prompt
   ln -sFf ~/dotfiles/.bashrc ~/.bashrc
