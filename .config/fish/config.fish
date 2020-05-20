@@ -1,5 +1,14 @@
 ## Paths
 
+set HEROKU /usr/local/opt/heroku/bin
+set SQLITE /usr/local/opt/sqlite/bin
+
+set GPGAGENT /usr/local/opt/gpg-agent/bin
+set OPENSSL /usr/local/opt/openssl/bin
+
+set -gx PATH $OPENSSL $HEROKU $SQLITE $GPGAGENT /usr/local/bin $PATH
+set -gx LIBRARY_PATH $LIBRARY_PATH /usr/local/opt/openssl/lib/
+
 ## Variables
 
 # Make vim the default editor
@@ -61,3 +70,6 @@ alias ia="open $1 -a /Applications/iA\ Writer.app/Contents/MacOS/iA\ Writer"
 
 # vim => nvim
 alias vim="nvim"
+
+# python (always3)
+alias python=/usr/local/bin/python3
