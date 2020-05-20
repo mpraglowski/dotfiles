@@ -20,6 +20,7 @@ function doIt() {
   ln -sFf ~/dotfiles/.vimrc ~/.vimrc
   ln -sFf ~/dotfiles/.ctags ~/.ctags
   ln -sFf ~/dotfiles/.ackrc ~/.ackrc
+  ln -sFf ~/dotfiles/.config ~/.config
   #nvim
   mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
   ln -s ~/.vim $XDG_CONFIG_HOME/nvim
