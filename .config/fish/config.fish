@@ -6,7 +6,11 @@ set SQLITE /usr/local/opt/sqlite/bin
 set GPGAGENT /usr/local/opt/gpg-agent/bin
 set OPENSSL /usr/local/opt/openssl/bin
 
-set -gx PATH $OPENSSL $HEROKU $SQLITE $GPGAGENT /usr/local/bin $PATH
+# node.js - custom node modules folder
+set -gx NPM_PACKAGES ~/.npm
+set -gx NODE_PATH $NPM_PACKAGES/lib/node_modules $NODE_PATH
+
+set -gx PATH $OPENSSL $HEROKU $SQLITE $GPGAGENT /usr/local/bin $NPM_PACKAGES/bin $PATH
 set -gx LIBRARY_PATH $LIBRARY_PATH /usr/local/opt/openssl/lib/
 
 ## Variables
