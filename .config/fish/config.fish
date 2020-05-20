@@ -15,6 +15,8 @@ set -gx LIBRARY_PATH $LIBRARY_PATH /usr/local/opt/openssl/lib/
 
 ## Variables
 
+set -gx GPG_TTY (tty)
+
 # Make vim the default editor
 set -x EDITOR vim
 
