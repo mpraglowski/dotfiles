@@ -37,22 +37,26 @@ map g/ <Plug>(incsearch-stay)
 map N  <Plug>(incsearch-nohl-N)
 map n  <Plug>(incsearch-nohl-n)
 
-Plugin 'sheerun/vim-polyglot'
+"Plugin 'sheerun/vim-polyglot'
+
+Plugin 'dag/vim-fish'
+" Set up :make to use fish for syntax checking.
+autocmd FileType fish compiler fish
 
 Plugin 'tpope/vim-rails'
 "Plugin 'tpope/vim-rake'
-Plugin 'tpope/vim-dispatch'
+"Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rhubarb'
+"Plugin 'tpope/vim-rhubarb'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-rsi'
+"Plugin 'tpope/vim-rsi'
 Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-vinegar'
-Plugin 'tpope/vim-abolish'
+"Plugin 'tpope/vim-vinegar'
+"Plugin 'tpope/vim-abolish'
 
 Plugin 'tonchis/vim-to-github'
 "Plugin 'benmills/vimux'
@@ -66,17 +70,17 @@ Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'roxma/vim-tmux-clipboard'
 
 " autocompletion
-Plugin 'valloric/youcompleteme'
+"Plugin 'valloric/youcompleteme'
 " Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+"autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+"autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+"autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " tmux-complete
-let g:tmuxcomplete#trigger = ''
+"let g:tmuxcomplete#trigger = ''
 
-"Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 
 Plugin 'junegunn/fzf.vim'
 set rtp+=/usr/local/opt/fzf
@@ -88,14 +92,15 @@ nmap <C-a> :Ag<CR>
 
 Plugin 'qpkorr/vim-bufkill'
 map <C-w> :BD<cr>
-Plugin 'junegunn/vim-easy-align'
-au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
+"Plugin 'junegunn/vim-easy-align'
+"au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
 
-Plugin 'Raimondi/delimitMate'
-Plugin 'andrewradev/simple_bookmarks.vim'
+"Plugin 'Raimondi/delimitMate'
+"Plugin 'andrewradev/simple_bookmarks.vim'
 
 Plugin 'itchyny/lightline.vim'
 let g:lightline = {
+      \ 'colorscheme': 'Base2Tone_MeadowDark',
       \ 'active': {
       \   'left':  [ [ 'mode', 'paste' ],
       \              [ 'fugitive', 'filename' ] ],
@@ -204,30 +209,32 @@ endfunction
 
 
 Plugin 'vim-scripts/mayansmoke'
-Plugin 'tpope/vim-markdown'
+"Plugin 'tpope/vim-markdown'
 Plugin 'junegunn/goyo.vim'
 Plugin 'amix/vim-zenroom2'
 
-Plugin 'terryma/vim-multiple-cursors'
+"Plugin 'terryma/vim-multiple-cursors'
 
 " Erlang setup
-"Plugin 'vim-erlang/vim-erlang-runtime'
-"Plugin 'vim-erlang/vim-erlang-omnicomplete'
-"Plugin 'vim-erlang/vim-erlang-tags'
+Plugin 'vim-erlang/vim-erlang-runtime'
+Plugin 'vim-erlang/vim-erlang-omnicomplete'
+Plugin 'vim-erlang/vim-erlang-tags'
 let g:erlang_tags_outfile = './.tags'
-"Plugin 'vim-erlang/vim-erlang-skeletons'
+Plugin 'vim-erlang/vim-erlang-skeletons'
 " vim-erlang-skeletons
 let g:erl_author="Mirosław Pragłowski"
 let g:erl_company="Solutions Factory"
 let g:erl_replace_buffer=1
-"Plugin 'vim-erlang/vim-erlang-compiler'
-"Plugin 'vim-erlang/vim-dialyzer'
-"Plugin 'edkolev/erlang-motions.vim'
-
-Plugin 'idris-hackers/idris-vim'
+Plugin 'vim-erlang/vim-erlang-compiler'
+Plugin 'vim-erlang/vim-dialyzer'
+Plugin 'edkolev/erlang-motions.vim'
 
 autocmd BufRead,BufNewFile *.erl,*.es.*.hrl,*.yaws,*.xrl set expandtab
 au BufNewFile,BufRead *.erl,*.es,*.hrl,*.yaws,*.xrl setf Erlang
+
+" Some other languages
+Plugin 'idris-hackers/idris-vim'
+Plugin 'dleonard0/pony-vim-syntax'
 
 Plugin 'airblade/vim-gitgutter'
 " GitGutter styling to use · instead of +/-
@@ -236,20 +243,15 @@ let g:gitgutter_sign_modified = '∙'
 let g:gitgutter_sign_removed = '∙'
 let g:gitgutter_sign_modified_removed = '∙'
 
-Plugin 'albfan/vim-timelapse'
-"Plugin 'dleonard0/pony-vim-syntax'
+"Plugin 'albfan/vim-timelapse'
 
 " colorschemes
+Plugin 'atelierbram/Base2Tone-vim'
 Plugin 'edkolev/tmuxline.vim'
 
-Plugin 'ruanyl/vim-eslint'
-
-Plugin 'wikitopian/hardmode'
-"autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+"Plugin 'ruanyl/vim-eslint'
 
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'mhinz/vim-startify'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -351,6 +353,9 @@ set t_Co=256
 set t_ut=
 
 " Set colorscheme
+set termguicolors
+set background=dark
+colorscheme Base2Tone_MeadowDark
 
 function! SetBackgroundMode()
   let s:mode = systemlist("defaults read -g AppleInterfaceStyle")[0]
@@ -369,7 +374,7 @@ highlight ColorColumn ctermbg=235 guibg=#2c2d27
 let &colorcolumn="80"
 
 " Force the cursor onto a new line after 80 characters
-" set textwidth=80
+set textwidth=80
 " However, in Git commit messages, let’s make it 72 characters
 autocmd FileType gitcommit set textwidth=72
 " Colour the 81st (or 73rd) column so that we don’t type over our limit
@@ -378,7 +383,7 @@ autocmd FileType gitcommit set textwidth=72
 autocmd FileType gitcommit set colorcolumn+=51
 
 " Vim ColorToggle
-map <Leader>b :ToggleBg<CR>
+"map <Leader>b :ToggleBg<CR>
 
 " Enable syntax highlighting
 syntax enable
