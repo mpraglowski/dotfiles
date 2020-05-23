@@ -3,13 +3,13 @@ function fish_prompt
         echo -n (set_color brred)"$USER"(set_color white)'@'(set_color yellow)(prompt_hostname)' '
     end
 
-    echo -n (set_color cyan)(prompt_pwd)' '
+    echo -n (set_color blue)(prompt_pwd)' '
 
     set_color -o
     if test "$USER" = 'root'
         echo -n (set_color red)'# '
     end
-    echo -n (set_color red)'❯ '
+    echo -n (set_color green)'❯ '
 
     set -l cmd_status $status
     if test $cmd_status -ne 0
@@ -130,7 +130,7 @@ function fish_prompt
         if test $branch_detached -ne 0
             set_color brmagenta
         else
-            set_color magenta
+            set_color green
         end
         echo -n "$branch"
     end
@@ -169,6 +169,6 @@ function fish_prompt
         echo -n ' '(set_color white)'◼'
     end
 
-    echo -n (set_color red)' ❯ '
+    echo -n (set_color green)' ❯ '
     set_color normal
 end
