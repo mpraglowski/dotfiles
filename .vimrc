@@ -247,7 +247,6 @@ let g:gitgutter_sign_modified_removed = '∙'
 
 " colorschemes
 Plugin 'atelierbram/Base2Tone-vim'
-Plugin 'edkolev/tmuxline.vim'
 
 "Plugin 'ruanyl/vim-eslint'
 
