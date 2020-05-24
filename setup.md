@@ -16,14 +16,9 @@ echo /usr/local/bin/fish | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/fish
 ```
 
-# base utils
+# utils
 ```
-brew install ccat cmake ctags fzf tree
-```
-
-# moar utils
-```
-brew install make ack the_silver_searcher htop gnu-sed hh tldr
+brew install ccat cmake ctags fzf tree make ack the_silver_searcher htop gnu-sed hh tldr httpie
 ```
 
 # git
