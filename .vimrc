@@ -70,15 +70,7 @@ Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'roxma/vim-tmux-clipboard'
 
 " autocompletion
-"Plugin 'valloric/youcompleteme'
-" Enable omni completion.
-"autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-"autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-"autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-"autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-" tmux-complete
-"let g:tmuxcomplete#trigger = ''
+Plugin 'neoclide/coc.nvim'
 
 Plugin 'scrooloose/nerdtree'
 
@@ -254,6 +246,20 @@ Plugin 'editorconfig/editorconfig-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+set signcolumn=yes
+
+" autocompletion
+autocmd FileType scss setl iskeyword+=@-@
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
