@@ -43,6 +43,9 @@ set -x GREP_OPTIONS --color=auto
 # Link Homebrew casks in `/Applications` rather than `~/Applications`
 set -x HOMEBREW_CASK_OPTS --appdir=/Applications
 
+## Init rbenv
+status --is-interactive; and source (rbenv init -|psub)
+
 ## Aliases
 
 # Easier navigation: .., ..., ...., ....., ~ and -
@@ -53,8 +56,8 @@ alias ...="cd ../.."
 alias glg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias gs='git status'
 alias gl='git log --oneline --decorate'
-alias gdf='git diff'
-alias gfd='git diff'
+alias gdf='git diff --color-moved'
+alias gfd='git diff --color-moved'
 alias pull='git pull'
 alias commit='git commit -v'
 alias push='git push'
@@ -66,7 +69,8 @@ alias gaa='git add -A'
 alias ga='git add -i -p'
 alias gco='git checkout'
 alias master='git checkout master'
-alias staging='git checkout staging'
+alias grm='git rebase master'
+alias grc='git rebase --continue'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
