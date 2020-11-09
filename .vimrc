@@ -69,6 +69,11 @@ Plugin 'wellle/tmux-complete.vim'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'roxma/vim-tmux-clipboard'
 
+" ReasonML based on:
+" https://reasonml.github.io/docs/en/editor-plugins &
+" https://github.com/reasonml-editor/vim-reason-plus
+Plugin 'reasonml-editor/vim-reason-plus'
+
 " autocompletion
 Plugin 'neoclide/coc.nvim'
 
