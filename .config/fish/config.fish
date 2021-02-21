@@ -87,3 +87,6 @@ alias ia="open $1 -a /Applications/iA\ Writer.app/Contents/MacOS/iA\ Writer"
 
 # python (always3)
 alias python=/usr/local/bin/python3
+
+# pdf
+alias pdfMerge='"/System/Library/Automator/Combine PDF Pages.action/Contents/Resources/join.py" -o'
