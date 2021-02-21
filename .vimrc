@@ -77,9 +77,8 @@ Plugin 'neoclide/coc.nvim'
 " https://reasonml.github.io/docs/en/editor-plugins &
 " https://github.com/reasonml-editor/vim-reason-plus
 Plugin 'reasonml-editor/vim-reason-plus'
-
-" autocompletion
-Plugin 'neoclide/coc.nvim'
+" ReScript
+Plugin 'rescript-lang/vim-rescript'
 
 Plugin 'scrooloose/nerdtree'
 
@@ -252,6 +251,8 @@ Plugin 'atelierbram/Base2Tone-vim'
 "Plugin 'ruanyl/vim-eslint'
 
 Plugin 'editorconfig/editorconfig-vim'
+
+Plugin 'rhysd/vim-github-actions'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
