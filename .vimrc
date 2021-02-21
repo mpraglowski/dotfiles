@@ -1,4 +1,5 @@
 set runtimepath+=~/.vim
+set runtimepath+=~/.vim/bundle/LanguageClient-neovim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
@@ -68,6 +69,9 @@ Plugin 'zaiste/tmux.vim'
 Plugin 'wellle/tmux-complete.vim'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'roxma/vim-tmux-clipboard'
+
+" autocompletion
+Plugin 'neoclide/coc.nvim'
 
 " ReasonML based on:
 " https://reasonml.github.io/docs/en/editor-plugins &
