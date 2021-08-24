@@ -60,8 +60,6 @@ Plugin 'tpope/vim-eunuch'
 "Plugin 'tpope/vim-abolish'
 
 Plugin 'tonchis/vim-to-github'
-"Plugin 'benmills/vimux'
-"Plugin 'thoughtbot/vim-rspec'
 Plugin 'vim-scripts/mru.vim'
 
 " tmux integration
@@ -73,12 +71,8 @@ Plugin 'roxma/vim-tmux-clipboard'
 " autocompletion
 Plugin 'neoclide/coc.nvim'
 
-" ReasonML based on:
-" https://reasonml.github.io/docs/en/editor-plugins &
-" https://github.com/reasonml-editor/vim-reason-plus
-Plugin 'reasonml-editor/vim-reason-plus'
-" ReScript
-Plugin 'rescript-lang/vim-rescript'
+" TailwindCSS autocompletion
+"Plugin 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
 
 Plugin 'scrooloose/nerdtree'
 
@@ -92,11 +86,6 @@ nmap <C-a> :Ag<CR>
 
 Plugin 'qpkorr/vim-bufkill'
 map <C-w> :BD<cr>
-"Plugin 'junegunn/vim-easy-align'
-"au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
-
-"Plugin 'Raimondi/delimitMate'
-"Plugin 'andrewradev/simple_bookmarks.vim'
 
 Plugin 'itchyny/lightline.vim'
 let g:lightline = {
