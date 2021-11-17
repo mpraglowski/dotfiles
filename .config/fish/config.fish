@@ -9,6 +9,10 @@ set OPENSSL /usr/local/opt/openssl/bin
 # node.js - custom node modules folder
 set -gx NPM_PACKAGES ~/.npm
 set -gx NODE_PATH $NPM_PACKAGES/lib/node_modules $NODE_PATH
+fish_add_path /usr/local/opt/node@14/bin
+
+# ruby 
+fish_add_path ~/.gem/ruby/3.0.0/bin
 
 # yarn
 set icu4c_path /usr/local/opt/icu4c
@@ -69,6 +73,7 @@ alias gaa='git add -A'
 alias ga='git add -i -p'
 alias gco='git checkout'
 alias master='git checkout master'
+alias main='git checkout main'
 alias grm='git rebase master'
 alias grc='git rebase --continue'
 
