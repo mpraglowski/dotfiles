@@ -28,6 +28,7 @@
 	# Interactive rebase with the given number of latest commits
 	reb = "!r() { git rebase -i HEAD~$1; }; r"
 [core]
+  editor = nvim
 	# Use custom `.gitignore` and `.gitattributes`
 	excludesfile = ~/.gitignore_global
 	attributesfile = ~/.gitattributes
@@ -83,31 +84,19 @@
 	compactionHeuristic = true
 	noprefix = true
 [merge]
-  tool = splice
+  tool = nvim -d
 [mergetool]
 	keepBackup = false
 	prompt = false
 
-[mergetool "splice"]
-  cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
-  trustExitCode = true
-[difftool "diffmerge"]
-	cmd = /usr/bin/diffmerge \"$LOCAL\" \"$REMOTE\"
-[mergetool "diffmerge"]
-	trustExitCode = true
-	cmd = /usr/bin/diffmerge --merge --result=\"$MERGED\"\"$LOCAL\" \"$BASE\" \"$REMOTE\"
-[mergetool "gvimdiff3"]
-	cmd = gvim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
-[mergetool "vimdiff3"]
-	cmd = vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
-
 [hub]
-protocol = https
+  protocol = https
 [gist]
 	private = true
 [github]
 	user = mpraglowski
 [commit]
 	gpgsign = true
+  verbose = true
 [gpg]
 	program = /usr/local/bin/gpg
