@@ -13,6 +13,8 @@ end
 local initialize = function ()
   mapLeader()
   loadModules()
+  -- Do not source the default filetype.vim
+  global.did_load_filetypes = 1
 end
 
 initialize()

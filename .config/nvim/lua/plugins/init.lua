@@ -34,7 +34,7 @@ return require('packer').startup(function()
     'nvim-telescope/telescope.nvim',
     requires = {
       {'tami5/sqlite.lua'},
-      {'nvim-lua/popup.nvim'}, 
+      {'nvim-lua/popup.nvim'},
       {'nvim-lua/plenary.nvim'},
       {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'},
       {'nvim-telescope/telescope-frecency.nvim'},
@@ -45,7 +45,7 @@ return require('packer').startup(function()
       {'hrsh7th/cmp-cmdline'},
       {'hrsh7th/vim-vsnip'},
       {'hrsh7th/vim-vsnip-integ'},
-      {'hrsh7th/cmp-nvim-lsp', 
+      {'hrsh7th/cmp-nvim-lsp',
         config = function()
           require('cmp').setup {
             sources = {
@@ -56,7 +56,7 @@ return require('packer').startup(function()
       },
       {'mfussenegger/nvim-dap'},
       {'nvim-telescope/telescope-dap.nvim'},
-      {'suketa/nvim-dap-ruby', 
+      {'suketa/nvim-dap-ruby',
         config = function()
           require('dap-ruby').setup()
         end
@@ -82,7 +82,9 @@ return require('packer').startup(function()
       {'nvim-lua/plenary.nvim'}
     },
     config = function()
-      require('gitsigns').setup()
+      require('gitsigns').setup {
+        current_line_blame = true
+      }
     end
   }
   -- Formatter
@@ -92,7 +94,7 @@ return require('packer').startup(function()
   use {
     'windwp/nvim-autopairs',
     config = function()
-      require('nvim-autopairs').setup()
+      require('plugins.nvim-autopairs')
     end
   }
   -- Focus mode
@@ -108,4 +110,9 @@ return require('packer').startup(function()
     require("zen-mode").setup()
    end
   }
+  -- Search
+  use {'Numkil/ag.nvim'}
+  -- Other
+  use {'nathom/filetype.nvim'}
+  use {'qpkorr/vim-bufkill'}
 end)

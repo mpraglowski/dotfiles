@@ -4,9 +4,11 @@ if not status then
 end
 
 local opts = { noremap = true, silent = true }
+vim.api.nvim_set_keymap("n", "<C-p>", "<Cmd>lua project_files()<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>p", "<Cmd>lua project_files()<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>e", "<Cmd>Telescope frecency theme=dropdown<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>fg", "<Cmd>Telescope live_grep<CR>", opts)
+vim.api.nvim_set_keymap("n", ";", "<Cmd>Telescope buffers<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>fb", "<Cmd>Telescope buffers<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>fm", "<Cmd>Telescope marks<CR>", opts)
 
