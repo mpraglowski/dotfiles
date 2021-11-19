@@ -115,4 +115,6 @@ return require('packer').startup(function()
   -- Other
   use {'nathom/filetype.nvim'}
   use {'qpkorr/vim-bufkill'}
+  -- UI (colorschemes)
+  use {'atelierbram/Base2Tone-vim' }
 end)
