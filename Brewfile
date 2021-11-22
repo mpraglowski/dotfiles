@@ -48,6 +48,10 @@ brew "mas"
 brew "protobuf"
 brew "mysql"
 brew "neovim"
+brew "universal-ctags"
+brew "neuron"
+brew "ripgrep"
+brew "fd"
 brew "nginx", restart_service: true
 brew "node@14", link: true
 brew "pinentry-mac"
