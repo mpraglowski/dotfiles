@@ -28,8 +28,9 @@ set -gx LIBRARY_PATH $LIBRARY_PATH /usr/local/opt/openssl/lib/
 
 set -gx GPG_TTY (tty)
 
-# Make vim the default editor
-set -x EDITOR vim
+# Make neovim the default editor
+set -x EDITOR nvim
+alias vim=nvim
 
 # Prefer US English and use UTF-8
 set -x LANG en_US
