@@ -9,9 +9,6 @@ ln -sFf ~/dotfiles/.vimrc ~/.vimrc
 ln -sFf ~/dotfiles/.ctags ~/.ctags
 ln -sFf ~/dotfiles/.ackrc ~/.ackrc
 ln -sFf ~/dotfiles/.config ~/.config
-#nvim
-ln -s ~/.vim ~/.config/nvim
-ln -s ~/.vimrc ~./.config/nvim/init.vim
 #gnupg
 mkdir -p ~/.gnupg
 ln -s ~/dotfiles/.gnupg/.gpg.conf ~/.gnupg/.gpg.conf
