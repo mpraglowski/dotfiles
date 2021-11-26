@@ -7,7 +7,6 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- Search
-map('n', '\\', ':Ag<SPACE>')
 map('n', '<SPACE>', '/')
 
 -- Disable highlight when <leader><cr> is pressed
