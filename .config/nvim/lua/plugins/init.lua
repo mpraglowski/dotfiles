@@ -89,6 +89,13 @@ return require('packer').startup(function()
   }
   -- Formatter
   use {'prettier/vim-prettier', run = 'yarn install'}
+  -- Strip trailing whitespace as you are editing
+  use {
+    'lewis6991/spaceless.nvim',
+    config = function()
+      require'spaceless'.setup()
+    end
+  }  
   -- Autoclose tags
   use {'windwp/nvim-ts-autotag'}
   use {
