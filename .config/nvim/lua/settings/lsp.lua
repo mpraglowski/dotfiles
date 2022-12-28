@@ -45,20 +45,9 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("n", "<leader>q", "<Cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
 end
 
-local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local null_ls = require("null-ls")
 local tbl = require("plenary").tbl
-
-null_ls.config({
-  sources = {
-    null_ls.builtins.code_actions.gitsigns,
-    null_ls.builtins.formatting.stylua,
-    null_ls.builtins.formatting.prettier.with({
-      filetypes = { "ruby", tbl.unpack(null_ls.builtins.formatting.prettier.filetypes) },
-    }),
-    null_ls.builtins.formatting.fish_indent,
-  },
-})
 
 local servers = { "null-ls", "elmls" }
 for _, lsp in ipairs(servers) do

@@ -20,7 +20,24 @@ return require('packer').startup(function()
     requires = {{'kyazdani42/nvim-web-devicons'}},
     config = function() require'nvim-tree'.setup {} end
   }
+  use {
+    'lambdalisue/glyph-palette.vim',
+    config = function()
+      vim.cmd([[augroup my-glyph-palette]])
+      vim.cmd([[autocmd! *]])
+      vim.cmd([[autocmd FileType fern call glyph_palette#apply()]])
+      vim.cmd([[autocmd FileType nerdtree,startify call glyph_palette#apply()]])
+      vim.cmd([[augroup END]])
+    end
+  }
   -- Native LSP for neovim
+  use {
+    "jose-elias-alvarez/null-ls.nvim",
+    config = function()
+      require('plugins.null-ls')
+    end,
+    requires = { "nvim-lua/plenary.nvim" },
+  }
   use {
     'neovim/nvim-lspconfig',
     requires = {
@@ -88,14 +105,19 @@ return require('packer').startup(function()
     end
   }
   -- Formatter
-  use {'prettier/vim-prettier', run = 'yarn install'}
+  use {
+    'MunifTanjim/prettier.nvim',
+    config = function()
+      require('plugins.prettier')
+    end
+  }
   -- Strip trailing whitespace as you are editing
   use {
     'lewis6991/spaceless.nvim',
     config = function()
       require'spaceless'.setup()
     end
-  }  
+  }
   -- Autoclose tags
   use {'windwp/nvim-ts-autotag'}
   use {
