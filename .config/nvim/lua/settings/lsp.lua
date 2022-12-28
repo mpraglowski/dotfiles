@@ -11,7 +11,7 @@ local on_attach = function(client, bufnr)
     client.config.flags.allow_incremental_sync = true
   end
 
-  if client.resolved_capabilities.document_formatting then
+  if client.server_capabilities.document_formatting then
     vim.api.nvim_command([[augroup Format]])
     vim.api.nvim_command([[autocmd! * <buffer>]])
     vim.api.nvim_command([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]])
@@ -59,7 +59,7 @@ end
 
 lsp_config.solargraph.setup({
   on_attach = function(client, bufnr)
-    client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.document_formatting = false
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
