@@ -14,7 +14,7 @@ local function diff_source()
 	end
 end
 
-require("lualine").setup({
+lualine.setup({
 	options = {
 		icons_enabled = false,
 	},

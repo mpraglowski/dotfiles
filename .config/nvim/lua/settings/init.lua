@@ -1,4 +1,4 @@
-require('settings.general')
-require('settings.ui')
-require('settings.macos')
-require('settings.lsp')
+require("settings.general")
+require("settings.ui")
+require("settings.macos")
+require("settings.lsp")

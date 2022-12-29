@@ -1,6 +1,6 @@
 local status, lualine = pcall(require, "nvim-autopairs")
 if not status then
-  return
+	return
 end
 
 local auto_pairs = require("nvim-autopairs")
