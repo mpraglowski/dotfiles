@@ -46,13 +46,20 @@ local on_attach = function(client, bufnr)
 end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+local lsp_flags = {
+  -- This is the default in Nvim 0.7+
+  debounce_text_changes = 150,
+}
+
 local null_ls = require("null-ls")
 local tbl = require("plenary").tbl
 
-local servers = { "null-ls", "elmls" }
+local servers = { "null-ls", "elmls", "pyright", "html", "tailwindcss" }
 for _, lsp in ipairs(servers) do
   lsp_config[lsp].setup({
     on_attach = on_attach,
+    flags = lsp_flags,
     capabilities = capabilities,
   })
 end
@@ -69,3 +76,12 @@ lsp_config.solargraph.setup({
     },
   },
 })
+
+-- this is for diagnositcs signs on the line number column
+-- use this to beautify the plain E W signs to more fun ones
+-- !important nerdfonts needs to be setup for this to work in your terminal
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl= hl, numhl = hl })
+end
