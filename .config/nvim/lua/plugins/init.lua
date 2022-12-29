@@ -1,5 +1,7 @@
 local fn = vim.fn
 local execute = vim.api.nvim_command
+local packer = require('packer')
+local use = packer.use
 
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
@@ -11,7 +13,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
   execute 'packadd packer.nvim'
 end
 
-return require('packer').startup(function()
+return packer.startup(function()
   -- Packer can manage itself
   use {'wbthomason/packer.nvim'}
   -- Nvim Tree for file exploring
@@ -31,6 +33,11 @@ return require('packer').startup(function()
     end
   }
   -- Native LSP for neovim
+  use { "nvim-lua/plenary.nvim" }
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+  }
   use {
     "jose-elias-alvarez/null-ls.nvim",
     config = function()
@@ -43,6 +50,18 @@ return require('packer').startup(function()
     requires = {
       {'jose-elias-alvarez/null-ls.nvim'}
     }
+  }
+  -- Autocompletion
+  use { 'hrsh7th/nvim-cmp' } -- Autocompletion plugin
+  use { 'hrsh7th/cmp-nvim-lsp' } -- LSP source for nvim-cmp
+  use { 'saadparwaiz1/cmp_luasnip' } -- Snippets source for nvim-cmp
+  use { 'L3MON4D3/LuaSnip' } -- Snippets plugin
+  -- Formatter
+  use {
+    'MunifTanjim/prettier.nvim',
+    config = function()
+      require('plugins.prettier')
+    end
   }
   -- Tresitter
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
@@ -102,13 +121,6 @@ return require('packer').startup(function()
       require('gitsigns').setup {
         current_line_blame = true
       }
-    end
-  }
-  -- Formatter
-  use {
-    'MunifTanjim/prettier.nvim',
-    config = function()
-      require('plugins.prettier')
     end
   }
   -- Strip trailing whitespace as you are editing

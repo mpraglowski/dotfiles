@@ -3,6 +3,9 @@ if not status then
   return
 end
 
+require("mason").setup()
+require("mason-lspconfig").setup()
+
 local lsp_config = require("lspconfig")
 local protocol = require("vim.lsp.protocol")
 
@@ -55,7 +58,7 @@ local lsp_flags = {
 local null_ls = require("null-ls")
 local tbl = require("plenary").tbl
 
-local servers = { "null-ls", "elmls", "pyright", "html", "tailwindcss" }
+local servers = { "null-ls", "elmls", "pyright", "html", "tailwindcss", "sumneko_lua" }
 for _, lsp in ipairs(servers) do
   lsp_config[lsp].setup({
     on_attach = on_attach,
@@ -76,6 +79,48 @@ lsp_config.solargraph.setup({
     },
   },
 })
+
+-- Autocompletion
+local luasnip = require 'luasnip'
+local cmp = require 'cmp'
+cmp.setup {
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end,
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<CR>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    },
+    ['<Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+  }),
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+  },
+}
 
 -- this is for diagnositcs signs on the line number column
 -- use this to beautify the plain E W signs to more fun ones
