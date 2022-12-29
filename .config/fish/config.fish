@@ -6,10 +6,13 @@ set SQLITE /usr/local/opt/sqlite/bin
 set GPGAGENT /usr/local/opt/gpg-agent/bin
 set OPENSSL /usr/local/opt/openssl/bin
 
+# brew
+fish_add_path /usr/local/sbin
+
 # node.js - custom node modules folder
 set -gx NPM_PACKAGES ~/.npm
 set -gx NODE_PATH $NPM_PACKAGES/lib/node_modules $NODE_PATH
-fish_add_path /usr/local/opt/node@14/bin
+fish_add_path /usr/local/opt/node@16/bin
 
 # ruby 
 fish_add_path ~/.gem/ruby/3.0.0/bin
@@ -90,6 +93,10 @@ alias cat="ccat"
 
 # iA Writer
 alias ia="open $1 -a /Applications/iA\ Writer.app/Contents/MacOS/iA\ Writer"
+
+# ruby & rails
+alias rails="bundle exec rails"
+alias rspec="bundle exec rspec"
 
 # python (always3)
 alias python=/usr/local/bin/python3
