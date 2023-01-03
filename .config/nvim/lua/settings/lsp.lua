@@ -14,13 +14,6 @@ local on_attach = function(client, bufnr)
 		client.config.flags.allow_incremental_sync = true
 	end
 
-	if client.server_capabilities.document_formatting then
-		vim.api.nvim_command([[augroup Format]])
-		vim.api.nvim_command([[autocmd! * <buffer>]])
-		vim.api.nvim_command([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]])
-		vim.api.nvim_command([[augroup END]])
-	end
-
 	local function buf_set_keymap(...)
 		vim.api.nvim_buf_set_keymap(bufnr, ...)
 	end
@@ -55,9 +48,6 @@ local lsp_flags = {
 	-- This is the default in Nvim 0.7+
 	debounce_text_changes = 150,
 }
-
-local null_ls = require("null-ls")
-local tbl = require("plenary").tbl
 
 local servers = { "null-ls", "elmls", "pyright", "html", "tailwindcss", "sumneko_lua" }
 for _, lsp in ipairs(servers) do
