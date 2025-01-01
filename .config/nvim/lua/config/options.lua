@@ -1,3 +1,9 @@
+-- Options are automatically loaded before lazy.nvim startup
+-- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
+-- Add any additional options here
+
+vim.g.mapleader = ","
+
 local cmd = vim.cmd -- to execute Vim commands e.g. cmd('pwd')
 local opt = vim.opt -- to set options
 
@@ -45,8 +51,13 @@ opt.splitright = true
 -- Cursor
 opt.cursorline = true
 
+-- UI
+opt.termguicolors = true -- True color support
+
 vim.cmd([[augroup BgHighlight]])
 vim.cmd([[autocmd!]])
 vim.cmd([[autocmd WinEnter * set cursorline]])
 vim.cmd([[autocmd WinLeave * set nocursorline]])
 vim.cmd([[augroup END]])
+
+vim.cmd([[set clipboard+=unnamedplus]]) -- Use OSX clipboard to copy and to paste
