@@ -12,7 +12,7 @@ opt.swapfile = false -- Skip swap file
 opt.backup = false
 opt.title = true
 opt.shell = "fish"
---opt.termguicolors = true
+opt.termguicolors = true -- True color support
 opt.lazyredraw = true
 
 -- Unknown
@@ -51,13 +51,10 @@ opt.splitright = true
 -- Cursor
 opt.cursorline = true
 
--- UI
-opt.termguicolors = true -- True color support
+cmd([[augroup BgHighlight]])
+cmd([[autocmd!]])
+cmd([[autocmd WinEnter * set cursorline]])
+cmd([[autocmd WinLeave * set nocursorline]])
+cmd([[augroup END]])
 
-vim.cmd([[augroup BgHighlight]])
-vim.cmd([[autocmd!]])
-vim.cmd([[autocmd WinEnter * set cursorline]])
-vim.cmd([[autocmd WinLeave * set nocursorline]])
-vim.cmd([[augroup END]])
-
-vim.cmd([[set clipboard+=unnamedplus]]) -- Use OSX clipboard to copy and to paste
+cmd([[set clipboard+=unnamedplus]]) -- Use OSX clipboard to copy and to paste
